@@ -33,25 +33,25 @@ module fsm
 
 // States
     enum {
-        idle,
-        pin_check,
-        select_deposit_withdrawal,
+        idle,                       // (1) Idle state for after reset.
+        pin_check,                  // (2) Pin check state for validating input pin is correct to local pin.
+        select_deposit_withdrawal,  // (3) Deposit/Withdrawal check state for selecting either deposit or withdrawal
         
         //Deposit states
-        deposit_account_selection,
-        deposit_cash_or_check,
-        open_atm_in,
+        deposit_account_selection,  // (4) If deposit was chosen in (3), this state starts the deposit phase and selects the deposit account
+        deposit_cash_or_check,      // (5) Confirmation state that moves to open_atm_in state
+        open_atm_in,                // (6) State for ATM deposit slot to be opened.
 
         //Withdrawal states
-        withdrawal_account_selection,
-        withdrawal_amount_selection,
-        withdraw_chequing,
-        withdraw_savings,
-        insufficient_funds_check,
-        open_atm_out,
+        withdrawal_account_selection,// (7) If withdrawal was chosen in (3), this state starts the deposit phase and selects the withdrawal account
+        withdrawal_amount_selection,// (8) Records amount to be withdrawn from the amount input
+        withdraw_chequing,          // (9) Confirmation state for chequing (automatically moves to insufficient funds check)
+        withdraw_savings,           // (10) Confirmation state for savings (automatically moves to insufficient funds check)
+        insufficient_funds_check,   // (11) Checks for insufficient funds in chosen chequing/savings to withdraw from
+        open_atm_out,               // (12) State for ATM withdrawal slot to be opened.
 
         // Done, telling you to withdraw card, wait for bank_card_insert to goto low
-        withdraw_card
+        withdraw_card               // (13) Loop to make sure card is withdrawn (bank_card_insert set to low)
     } state, state_next;
 
     // Next state logic
@@ -69,9 +69,10 @@ module fsm
     always@(posedge clk) begin
         if (rst) begin
             //reset stuff in here, including controls for opening/closing the withdrawal + deposit windows as well as the local values for the atm.
-            open_atm_in = 1'b0;
-            open_atm_out = 1'b0;
-            {savings_local, chequing_local, pin_local} = {SAVINGS_FUNDS_AMOUNT, CHEQUING_FUNDS_AMOUNT, CORRECT_PIN};
+            open_atm_in <= 1'b0;
+            open_atm_out <= 1'b0;
+            {savings_local, chequing_local, pin_local} <= {SAVINGS_FUNDS_AMOUNT, CHEQUING_FUNDS_AMOUNT, CORRECT_PIN};
+            state <= idle;
         end
         else begin
             case(state)
