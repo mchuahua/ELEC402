@@ -53,7 +53,7 @@ module fsm
 
         // Done, telling you to withdraw card, wait for bank_card_insert to goto low
         withdraw_card               // (13) Loop to make sure card is withdrawn (bank_card_insert set to low)
-    } state, state_next;
+    } state, next_state;
 
     // Next state logic
     always_comb begin
