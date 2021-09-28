@@ -108,7 +108,7 @@ module fsm_tb();
         #12;
         assert(dut.chequing_local < dut.CHEQUING_FUNDS_AMOUNT)
         else begin
-            $error("Incorrect amount in chequing! Must have less because we withdrew money!")
+            $error("Incorrect amount in chequing! Must have less because we withdrew money!");
             err++;
         end
 
@@ -129,11 +129,11 @@ module fsm_tb();
         #30;
         assert(dut.state === dut.withdraw_card)
         else begin
-            $error("Incorrect end state! Must be withdraw card state!")
+            $error("Incorrect end state! Must be withdraw card state!");
             err++;
         end
 
-        
+
         if (err > 0)
             $display("FAILED; Errors encountered!");
         else
