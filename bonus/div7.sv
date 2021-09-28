@@ -14,7 +14,7 @@ module div7_fsm(
     } state, next_state;
 
     always_ff @(posedge clk) begin
-        if (reset)
+        if (rst)
             state <= S0;
         else
             state <= next_state;
