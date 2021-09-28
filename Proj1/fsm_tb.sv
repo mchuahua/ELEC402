@@ -1,6 +1,6 @@
 module fsm_tb();
 
-    logic clk, rst, bank_card_insert, deposit_withdrawal_selection, account_selection, open_atm_in, open_atm_out, ready;
+    logic clk, rst, bank_card_insert, deposit_withdrawal_selection, account_selection, open_atm_dispense, open_atm_receive, ready;
     logic [13:0] amount, pin;
 
     int err = 0;
