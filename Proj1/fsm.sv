@@ -15,8 +15,8 @@ module fsm
     input logic [13:0] pin,                     // Indicates input pin (for validation with CORRECT_PIN / pin_local)
 
     //Outputs
-    output logic open_atm_out,                  // Opens ATM deposit out slot for dispensing cash
-    output logic open_atm_in,                   // Opens ATM withdraw in slow for receiving cash / check
+    output logic open_atm_dispense,             // Opens ATM deposit out slot for dispensing cash
+    output logic open_atm_receive,             // Opens ATM withdraw in slow for receiving cash / check
     output logic ready                          // Indicates that ATM is ready to be used (not currently being used)
 
 );
@@ -70,8 +70,8 @@ module fsm
     always@(posedge clk) begin
         if (rst) begin
             //reset stuff in here, including controls for opening/closing the withdrawal + deposit windows as well as the local values for the atm.
-            open_atm_in <= 1'b0;
-            open_atm_out <= 1'b0;
+            open_atm_dispense <= 1'b0;
+            open_atm_receive <= 1'b0;
             {savings_local, chequing_local, pin_local} <= {SAVINGS_FUNDS_AMOUNT, CHEQUING_FUNDS_AMOUNT, CORRECT_PIN};
             state <= idle;
         end
@@ -109,6 +109,7 @@ module fsm
                 end
                 deposit_cash_or_check: begin
                     state <= open_atm_in;
+                    open_atm_receive = 1;
                 end
                 // Withdrawal states
                 withdrawal_account_selection: begin
@@ -124,10 +125,12 @@ module fsm
                     if (account_selection == CHEQUING && amount <= chequing_local) begin
                         state <= open_atm_out;
                         chequing_local = chequing_local - amount;
+                        open_atm_dispense = 1;
                     end
                     else if (account_selection == SAVINGS && amount <= savings_local) begin
                         state <= open_atm_out;
                         savings_local = savings_local - amount;
+                        open_atm_dispense = 1;
                     end
                 end
                 // Wait for card to be withdrawn before entering idle again
@@ -135,6 +138,8 @@ module fsm
                     if (~bank_card_insert) begin
                         state <= idle;
                     end
+                    open_atm_dispense = 0;
+                    open_atm_receive = 0;
                 end
                 default: state <= next_state;    
             endcase
