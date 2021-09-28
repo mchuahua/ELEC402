@@ -69,7 +69,7 @@ module fsm_tb();
         // Test 2a: to see if selection of withdrawal goes to correct states.
         // Withdrawal == 0, Deposit == 1;
         #2;
-        assert(dut.state === widthdrawal_account_selection)
+        assert(dut.state === withdrawal_account_selection)
         else begin
             $error("Withdrawal state incorrect!");
             err++;
