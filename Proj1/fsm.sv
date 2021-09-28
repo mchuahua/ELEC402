@@ -6,21 +6,22 @@ module fsm
 )
 (
     //Inputs
-    input logic clk, 
-    input logic rst,
-    input logic bank_card_insert, //Start
-    input logic deposit_withdrawal_selection,
-    input logic account_selection,
-    input logic [13:0] amount,
-    input logic [13:0] pin,
+    input logic clk,                            // Drives entire FSM module
+    input logic rst,                            // Drives initialization reset 
+    input logic bank_card_insert,               // Starts FSM 
+    input logic deposit_withdrawal_selection,   // Selects deposit or withdrawal (see localparam below)
+    input logic account_selection,              // Selects chequing/savings (see localparam below)
+    input logic [13:0] amount,                  // Indicates amount for withdrawal/deposit
+    input logic [13:0] pin,                     // Indicates input pin (for validation with CORRECT_PIN / pin_local)
 
     //Outputs
-    output logic open_atm_out,
-    output logic open_atm_in,
-    output logic ready
+    output logic open_atm_out,                  // Opens ATM deposit out slot for dispensing cash
+    output logic open_atm_in,                   // Opens ATM withdraw in slow for receiving cash / check
+    output logic ready                          // Indicates that ATM is ready to be used (not currently being used)
 
 );
 
+    // Local parameters for usage (easier to read later on)
     localparam WITHDRAWAL = 1'b0;
     localparam DEPOSIT = 1'b1;
     localparam CHEQUING = 1'b0;
@@ -65,7 +66,7 @@ module fsm
         endcase
     end
 
-// Main logic state machine
+// Main logic state machine. See state comments above for their functionality
     always@(posedge clk) begin
         if (rst) begin
             //reset stuff in here, including controls for opening/closing the withdrawal + deposit windows as well as the local values for the atm.
