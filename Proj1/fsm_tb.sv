@@ -38,6 +38,8 @@ module fsm_tb();
             end
             #2;
         end
+
+        bank_card_insert = 1;
         
         // Test 1a: Check to see if incorrect pin gives expected states of idle and pin_check.
         // Default pin that matches is 1234, should be wrong. 
@@ -122,6 +124,16 @@ module fsm_tb();
             err++;
         end
 
+        // Test 6: Check if withdraw card not 0 makes it loop indefinitely at withdraw card state.
+        amount = 14'd1;
+        #30;
+        assert(dut.state === dut.withdraw_card)
+        else begin
+            $error("Incorrect end state! Must be withdraw card state!")
+            err++;
+        end
+
+        
         if (err > 0)
             $display("FAILED; Errors encountered!");
         else
