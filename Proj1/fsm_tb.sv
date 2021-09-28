@@ -69,7 +69,7 @@ module fsm_tb();
         // Test 2a: to see if selection of withdrawal goes to correct states.
         // Withdrawal == 0, Deposit == 1;
         #2;
-        assert(dut.state === withdrawal_account_selection)
+        assert(dut.state === dut.withdrawal_account_selection)
         else begin
             $error("Withdrawal state incorrect!");
             err++;
@@ -86,7 +86,7 @@ module fsm_tb();
         #2; 
             // State should be selecting deposit or withdrawal
         #2;
-        assert(dut.state === deposit_account_selection)
+        assert(dut.state === dut.deposit_account_selection)
         else begin
             $error("Deposit state incorrect!");
             err++;
@@ -118,7 +118,7 @@ module fsm_tb();
         #2;
         rst = 0;
         #12;
-        assert(dut.state == insufficient_funds_check)
+        assert(dut.state == dut.insufficient_funds_check)
         else begin
             $error("Insufficient funds unexpected state!");
             err++;
