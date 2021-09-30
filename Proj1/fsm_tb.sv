@@ -145,7 +145,7 @@ module fsm_tb();
 
         test_num = 9;
         // Test 6b: Check if withdrawing card makes loop end
-        bank_card_insert
+        bank_card_insert = 0;
         #30;
         assert(dut.state !== dut.withdraw_card)
         else begin
