@@ -106,6 +106,7 @@ module fsm_tb();
             $error("Incorrect amount in chequing! Must have more because deposited money!");
             err++;
         end
+        #10;
 
         test_num = 6;
         // Test 4: Check withdrawal correct
@@ -120,6 +121,7 @@ module fsm_tb();
             err++;
         end
 
+        
         test_num = 7;
         // Test 5: Check insufficient funds
         amount = 14'd5000;
