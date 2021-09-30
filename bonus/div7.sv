@@ -32,8 +32,8 @@ module div7_fsm(
             S4: next_state = S5;
             S5: next_state = S6;
             S6: next_state = S7;
-            S8: next_state = S0;
-            S9: next_state = S0;
+            S8: next_state = S9;
+            S9: next_state = S10;
             S10: next_state = S11;
             S11: next_state = S12;
             S12: next_state = S13;
