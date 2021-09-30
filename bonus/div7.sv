@@ -44,6 +44,6 @@ module div7_fsm(
     end
 
     // Output logic for 50% duty cycle
-    assign y = (state == S0) || (state == S1) || (state == S3) || (state == S4) || (state == S5) || (state == S6);
+    assign y = (state == S0) || (state == S1) ||  (state == S2) || (state == S3) || (state == S4) || (state == S5) || (state == S6);
 
 endmodule
