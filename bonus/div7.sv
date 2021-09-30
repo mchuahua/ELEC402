@@ -10,10 +10,11 @@ module div7_fsm(
 );
 
     enum{
-        S0, S1, S2, S3, S4, S5, S6
+        S0, S1, S2, S3, S4, S5, S6, // ON States
+        S7, S8, S9, S10, S11, S12, S13 // OFF States
     } state, next_state;
 
-    always_ff @(posedge clk) begin
+    always_ff @(posedge clk, negedge clk) begin
         if (rst)
             state <= S0;
         else
@@ -30,12 +31,18 @@ module div7_fsm(
             S3: next_state = S4;
             S4: next_state = S5;
             S5: next_state = S6;
-            S6: next_state = S0;
+            S6: next_state = S7;
+            S8: next_state = S0;
+            S9: next_state = S0;
+            S10: next_state = S11;
+            S11: next_state = S12;
+            S12: next_state = S13;
+            S13: next_state = S0;
             default: next_state = S0;
         endcase
     end
 
-    // Output logic
-    assign y = state == S6;
+    // Output logic for 50% duty cycle
+    assign y = (state == S0) || (state == S1) || (state == S3) || (state == S4) || (state == S5) || (state == S6);
 
 endmodule
