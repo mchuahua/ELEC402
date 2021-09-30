@@ -44,7 +44,7 @@ module fsm_tb();
         bank_card_insert = 1;
         
         test_num = 1;
-        // Test 1a: Check to see if incorrect pin gives expected states of idle and pin_check.
+        // Test 1: Check to see if incorrect pin gives expected states of idle and pin_check.
         // Default pin that matches is 1234, should be wrong. 
         for (int i = 0; i < 10; i++) begin
             pin = i[13:0];
@@ -57,7 +57,7 @@ module fsm_tb();
         end
         
         test_num = 2;
-        // Test 1b: Check to see if correct pin gives expected state
+        // Test 2: Check to see if correct pin gives expected state
         pin = 14'd1234;
         // Do one extra cycle because we're not at the correct state to check for pin.
         if(dut.state == dut.idle) begin
@@ -71,7 +71,7 @@ module fsm_tb();
         end
 
         test_num = 3;
-        // Test 2a: to see if selection of withdrawal goes to correct states.
+        // Test 3: to see if selection of withdrawal goes to correct states.
         // Withdrawal == 0, Deposit == 1;
         #2;
         assert(dut.state === dut.withdrawal_account_selection)
@@ -81,7 +81,7 @@ module fsm_tb();
         end
 
         test_num = 4;
-        // Test 2b: see if deposit goes to correct state. Reset states first
+        // Test 4: see if deposit goes to correct state. Reset states first
         rst = 1;
         #2;
         rst = 0;
@@ -99,7 +99,7 @@ module fsm_tb();
         end
 
         test_num = 5;
-        // Test 3: check to see if deposited correctly
+        // Test 5: check to see if deposited correctly
         #2;
         assert(dut.chequing_local > dut.CHEQUING_FUNDS_AMOUNT)
         else begin
@@ -109,7 +109,7 @@ module fsm_tb();
         #10;
 
         test_num = 6;
-        // Test 4: Check withdrawal correct
+        // Test 6: Check withdrawal correct
         deposit_withdrawal_selection = 1'b0;
         rst = 1;
         #2;
@@ -123,7 +123,7 @@ module fsm_tb();
 
         
         test_num = 7;
-        // Test 5: Check insufficient funds
+        // Test 7: Check insufficient funds
         amount = 14'd5000;
         rst = 1;
         #2;
@@ -136,7 +136,7 @@ module fsm_tb();
         end
 
         test_num = 8;
-        // Test 6: Check if withdraw card not 0 makes it loop indefinitely at withdraw card state.
+        // Test 8: Check if withdraw card not 0 makes it loop indefinitely at withdraw card state.
         amount = 14'd1;
         #30;
         assert(dut.state === dut.withdraw_card)
@@ -146,10 +146,10 @@ module fsm_tb();
         end
 
         test_num = 9;
-        // Test 6b: Check if withdrawing card makes loop end
+        // Test 9: Check if withdrawing card makes loop end
         bank_card_insert = 0;
         #30;
-        assert(dut.state !== dut.withdraw_card)
+        assert(dut.state !== dut.withdraw_card && dut.state === dut.idle)
         else begin
             $error("Incorrect end state! Must be NOT be in withdraw card state!");
             err++;
