@@ -14,7 +14,7 @@ module div7_tb();
 
     initial begin
         rst = 1;
-        #3; 
+        #2; 
         rst = 0;
     end
 
