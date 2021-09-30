@@ -77,11 +77,13 @@ module fsm
         end
         else begin
             case(state)
+                // Idle state where atm is ready.
                 idle: begin
                     if (bank_card_insert) begin
                         state <= pin_check;
                     end
                 end
+                // Checks pin.
                 pin_check: begin
                     if (pin == pin_local) begin
                         state <= select_deposit_withdrawal;
@@ -91,6 +93,7 @@ module fsm
                     end
                 end
                 select_deposit_withdrawal: begin
+                    // Select either deposit or withdrawal
                     if (deposit_withdrawal_selection == WITHDRAWAL) begin
                         state <= withdrawal_account_selection;
                     end
@@ -100,6 +103,7 @@ module fsm
                 end
                 // Deposit states
                 deposit_account_selection: begin
+                    // Adds input amount to the savings or chequing account (aka deposit)
                     if (account_selection == CHEQUING)
                         chequing_local = chequing_local + amount;
                     else begin
