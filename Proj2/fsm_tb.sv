@@ -60,9 +60,9 @@ module fsm_tb();
         // Test 2: Check to see if correct pin gives expected state
         pin = 14'd1234;
         // Do one extra cycle because we're not at the correct state to check for pin.
-        if(dut.state == dut.idle) begin
+        // if(dut.state == dut.idle) begin
             #2;
-        end
+        // end
         #2;
         // assert(dut.state !== dut.idle || dut.state !== dut.pin_check)
         // else begin
