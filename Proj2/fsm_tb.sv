@@ -1,3 +1,5 @@
+`timescale 1ns/10ps
+
 module fsm_tb();
 
     logic clk, rst, bank_card_insert, deposit_withdrawal_selection, account_selection, open_atm_dispense, open_atm_receive, ready;
