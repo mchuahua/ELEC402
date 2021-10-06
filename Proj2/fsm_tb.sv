@@ -68,7 +68,7 @@ module fsm_tb();
         // else begin
         //     $error("Correct pin states!");
         //     err++;
-        end
+        // end
 
         test_num = 3;
         // Test 3: to see if selection of withdrawal goes to correct states.
