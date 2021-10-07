@@ -23,19 +23,20 @@ module fsm(clk, rst, bank_card_insert, deposit_withdrawal_selection,
   wire n_24, n_25, n_26, n_27, n_28, n_29, n_30, n_31;
   wire n_32, n_33, n_34, n_35, n_36, n_37, n_38, n_39;
   wire n_40, n_41, n_42, n_43, n_44, n_45, n_46, n_47;
-  wire n_49, n_50, n_51, n_52, n_53, n_55, n_56, n_57;
-  wire n_58, n_59, n_60, n_61, n_62, n_63, n_64, n_65;
-  wire n_66, n_67, n_68, n_69, n_70, n_71, n_72, n_73;
-  wire n_74, n_75, n_77, n_78, n_79, n_80, n_81, n_82;
-  wire n_83, n_84, n_85, n_86, n_87, n_88, n_89, n_90;
-  wire n_91, n_92, n_93, n_94, n_95, n_96, n_97, n_98;
-  wire n_99, n_100, n_101, n_103, n_105, n_106, n_107, n_108;
-  wire n_109, n_110, n_111, n_112, n_113, n_114, n_115, n_116;
-  wire n_117, n_118, n_119, n_120, n_121, n_122, n_123, n_124;
-  wire n_125, n_126, n_127, n_128, n_129, n_130, n_131, n_132;
-  wire n_133, n_134, n_135, n_136, n_137, n_138, n_139, n_140;
-  wire n_141, n_142, n_143, n_144, n_145, n_146, n_147, n_148;
-  wire n_149, n_150, n_151, n_152, n_153, n_158, n_159, n_160;
+  wire n_48, n_49, n_50, n_51, n_52, n_53, n_54, n_55;
+  wire n_56, n_57, n_58, n_59, n_60, n_61, n_62, n_63;
+  wire n_64, n_65, n_66, n_67, n_68, n_69, n_70, n_71;
+  wire n_72, n_73, n_74, n_75, n_76, n_77, n_78, n_79;
+  wire n_80, n_81, n_82, n_83, n_84, n_85, n_86, n_87;
+  wire n_88, n_89, n_90, n_91, n_92, n_93, n_94, n_95;
+  wire n_96, n_97, n_98, n_99, n_100, n_101, n_102, n_103;
+  wire n_104, n_105, n_106, n_107, n_108, n_109, n_110, n_111;
+  wire n_112, n_113, n_114, n_115, n_116, n_117, n_118, n_119;
+  wire n_120, n_121, n_122, n_123, n_124, n_125, n_126, n_127;
+  wire n_128, n_129, n_130, n_132, n_133, n_134, n_135, n_136;
+  wire n_137, n_138, n_139, n_140, n_141, n_142, n_143, n_144;
+  wire n_145, n_146, n_147, n_148, n_149, n_150, n_151, n_152;
+  wire n_153, n_154, n_155, n_156, n_157, n_158, n_159, n_160;
   wire n_161, n_162, n_163, n_164, n_165, n_166, n_167, n_168;
   wire n_169, n_170, n_171, n_172, n_173, n_174, n_175, n_176;
   wire n_177, n_178, n_179, n_180, n_181, n_182, n_183, n_184;
@@ -44,811 +45,609 @@ module fsm(clk, rst, bank_card_insert, deposit_withdrawal_selection,
   wire n_201, n_202, n_203, n_204, n_205, n_206, n_207, n_208;
   wire n_209, n_210, n_211, n_212, n_213, n_214, n_215, n_216;
   wire n_217, n_218, n_219, n_220, n_221, n_222, n_223, n_224;
-  wire n_225, n_226, n_227, n_228, n_229, n_230, n_231, n_233;
-  wire n_234, n_235, n_236, n_237, n_238, n_239, n_240, n_242;
-  wire n_243, n_244, n_245, n_246, n_247, n_248, n_249, n_250;
-  wire n_251, n_252, n_253, n_254, n_255, n_256, n_257, n_258;
-  wire n_259, n_260, n_261, n_262, n_263, n_264, n_265, n_266;
-  wire n_267, n_268, n_269, n_270, n_271, n_272, n_273, n_274;
-  wire n_275, n_276, n_277, n_278, n_279, n_280, n_281, n_282;
-  wire n_283, n_284, n_285, n_286, n_287, n_288, n_289, n_290;
-  wire n_291, n_292, n_293, n_294, n_295, n_296, n_297, n_298;
-  wire n_299, n_300, n_301, n_302, n_303, n_304, n_305, n_306;
-  wire n_307, n_308, n_309, n_310, n_311, n_312, n_313, n_314;
-  wire n_315, n_316, n_317, n_318, n_319, n_320, n_321, n_322;
-  wire n_323, n_324, n_325, n_326, n_327, n_328, n_329, n_330;
-  wire n_331, n_332, n_333, n_334, n_335, n_336, n_337, n_338;
-  wire n_339, n_340, n_341, n_342, n_343, n_344, n_345, n_346;
-  wire n_347, n_348, n_349, n_350, n_351, n_352, n_353, n_354;
-  wire n_355, n_356, n_357, n_358, n_359, n_360, n_361, n_362;
-  wire n_363, n_364, n_365, n_366, n_367, n_368, n_369, n_370;
-  wire n_371, n_372, n_373, n_374, n_375, n_376, n_377, n_379;
-  wire n_380, n_381, n_382, n_383, n_384, n_385, n_386, n_387;
-  wire n_388, n_389, n_390, n_391, n_392, n_393, n_394, n_395;
-  wire n_396, n_397, n_398, n_399, n_400, n_401, n_402, n_403;
-  wire n_404, n_405, n_406, n_407, n_408, n_409, n_410, n_411;
-  wire n_412, n_414, n_415, n_416, n_417, n_418, n_419, n_420;
-  wire n_421, n_422, n_423, n_424, n_425, n_426, n_427, n_428;
-  wire n_429, n_430, n_431, n_432, n_433, n_434, n_435, n_436;
-  wire n_437, n_438, n_439, n_440, n_441, n_442, n_443, n_444;
-  wire n_445, n_446, n_447, n_448, n_449, n_450, n_451, n_452;
-  wire n_453, n_454, n_455, n_456, n_457, n_458, n_459, n_460;
-  wire n_461, n_462, n_463, n_464, n_465, n_466, n_467, n_468;
-  wire n_469, n_470, n_471, n_472, n_473, n_474, n_475, n_476;
-  wire n_477, n_478, n_479, n_480, n_481, n_482, n_483, n_484;
-  wire n_485, n_486, n_487, n_488, n_489, n_490, n_491, n_492;
-  wire n_493, n_494, n_495, n_496, n_497, n_498, n_499, n_500;
-  wire n_501, n_502, n_503, n_504, n_505, n_506, n_507, n_508;
-  wire n_509, n_510, n_511, n_512, n_513, n_514, n_515, n_516;
-  wire n_517, n_518, n_519, n_520, n_521, n_522, n_523, n_524;
-  wire n_525, n_526, n_527, n_528, n_529, n_530, n_531, n_532;
-  wire n_533, n_534, n_535, n_536, n_537, n_538, n_539, n_540;
-  wire n_541, n_542, n_543, n_544, n_545, n_546, n_547, n_548;
-  wire n_549, n_550, n_551, n_552, n_553, n_554, n_555, n_556;
-  wire n_557, n_558, n_559, n_560, n_561, n_562, n_563, n_564;
-  wire n_565, n_566, n_567, n_568, n_569, n_570, n_571, n_572;
-  wire n_573, n_574, n_575, n_576, n_577, n_578, n_579, n_580;
-  wire n_581, n_582, n_583, n_584, n_585, n_586, n_587, n_588;
-  wire n_589, n_590, n_591, n_592, n_593, n_594, n_595, n_596;
-  wire n_597, n_598, n_599, n_600, n_601, n_602, n_603, n_604;
-  wire n_641, n_642;
-  DFFSNQ_X1 \savings_local_reg[6] (.SN (1'b1), .CLK (clk), .D (n_600),
-       .Q (savings_local[6]));
-  DFFSNQ_X1 \savings_local_reg[9] (.SN (1'b1), .CLK (clk), .D (n_599),
-       .Q (savings_local[9]));
-  DFFSNQ_X1 \chequing_local_reg[3] (.SN (1'b1), .CLK (clk), .D (n_604),
-       .Q (chequing_local[3]));
-  DFFSNQ_X1 \chequing_local_reg[4] (.SN (1'b1), .CLK (clk), .D (n_603),
-       .Q (chequing_local[4]));
-  DFFSNQ_X1 \savings_local_reg[3] (.SN (1'b1), .CLK (clk), .D (n_601),
-       .Q (savings_local[3]));
-  DFFSNQ_X1 \chequing_local_reg[11] (.SN (1'b1), .CLK (clk), .D
-       (n_598), .Q (chequing_local[11]));
-  DFFSNQ_X1 \chequing_local_reg[12] (.SN (1'b1), .CLK (clk), .D
-       (n_592), .Q (chequing_local[12]));
-  DFFSNQ_X1 \chequing_local_reg[9] (.SN (1'b1), .CLK (clk), .D (n_591),
-       .Q (chequing_local[9]));
-  DFFSNQ_X1 \chequing_local_reg[10] (.SN (1'b1), .CLK (clk), .D
-       (n_594), .Q (chequing_local[10]));
-  DFFSNQ_X1 \chequing_local_reg[7] (.SN (1'b1), .CLK (clk), .D (n_593),
-       .Q (chequing_local[7]));
-  DFFSNQ_X1 \chequing_local_reg[1] (.SN (1'b1), .CLK (clk), .D (n_588),
-       .Q (chequing_local[1]));
-  DFFSNQ_X1 \chequing_local_reg[2] (.SN (1'b1), .CLK (clk), .D (n_587),
-       .Q (chequing_local[2]));
-  DFFSNQ_X1 \chequing_local_reg[5] (.SN (1'b1), .CLK (clk), .D (n_586),
-       .Q (chequing_local[5]));
-  DFFSNQ_X1 \chequing_local_reg[6] (.SN (1'b1), .CLK (clk), .D (n_585),
-       .Q (chequing_local[6]));
-  DFFSNQ_X1 \chequing_local_reg[13] (.SN (1'b1), .CLK (clk), .D
-       (n_590), .Q (chequing_local[13]));
-  DFFSNQ_X1 \chequing_local_reg[8] (.SN (1'b1), .CLK (clk), .D (n_597),
-       .Q (chequing_local[8]));
-  DFFSNQ_X1 \chequing_local_reg[0] (.SN (1'b1), .CLK (clk), .D (n_589),
-       .Q (chequing_local[0]));
-  DFFSNQ_X1 \savings_local_reg[13] (.SN (1'b1), .CLK (clk), .D (n_595),
-       .Q (savings_local[13]));
-  NAND4_X1 g92084(.A1 (n_550), .A2 (n_566), .A3 (n_373), .A4 (n_602),
-       .ZN (n_604));
-  NAND4_X1 g92085(.A1 (n_549), .A2 (n_565), .A3 (n_411), .A4 (n_602),
-       .ZN (n_603));
-  DFFSNQ_X1 \savings_local_reg[5] (.SN (1'b1), .CLK (clk), .D (n_574),
-       .Q (savings_local[5]));
-  DFFSNQ_X1 \savings_local_reg[7] (.SN (1'b1), .CLK (clk), .D (n_580),
-       .Q (savings_local[7]));
-  DFFSNQ_X1 \savings_local_reg[11] (.SN (1'b1), .CLK (clk), .D (n_577),
-       .Q (savings_local[11]));
-  DFFSNQ_X1 \savings_local_reg[2] (.SN (1'b1), .CLK (clk), .D (n_579),
-       .Q (savings_local[2]));
-  DFFSNQ_X1 \savings_local_reg[10] (.SN (1'b1), .CLK (clk), .D (n_584),
-       .Q (savings_local[10]));
-  DFFSNQ_X1 \savings_local_reg[12] (.SN (1'b1), .CLK (clk), .D (n_582),
-       .Q (savings_local[12]));
-  DFFSNQ_X1 \savings_local_reg[1] (.SN (1'b1), .CLK (clk), .D (n_581),
-       .Q (savings_local[1]));
-  DFFSNQ_X1 \savings_local_reg[4] (.SN (1'b1), .CLK (clk), .D (n_578),
-       .Q (savings_local[4]));
-  DFFSNQ_X1 \savings_local_reg[8] (.SN (1'b1), .CLK (clk), .D (n_576),
-       .Q (savings_local[8]));
-  NAND4_X1 g92095(.A1 (n_563), .A2 (n_526), .A3 (n_384), .A4 (n_602),
-       .ZN (n_601));
-  NAND4_X1 g92073(.A1 (n_562), .A2 (n_525), .A3 (n_509), .A4 (n_602),
-       .ZN (n_600));
-  NAND4_X1 g92074(.A1 (n_560), .A2 (n_532), .A3 (n_524), .A4 (n_602),
-       .ZN (n_599));
-  OAI21_X1 g92067(.A1 (n_596), .A2 (n_159), .B (n_573), .ZN (n_598));
-  OAI21_X1 g92086(.A1 (n_596), .A2 (n_15), .B (n_552), .ZN (n_597));
-  DFFSNQ_X1 \savings_local_reg[0] (.SN (1'b1), .CLK (clk), .D (n_557),
+  wire n_225, n_226, n_227, n_228, n_229, n_230, n_231, n_232;
+  wire n_233, n_234, n_235, n_236, n_237, n_238, n_239, n_240;
+  wire n_241, n_242, n_243, n_244, n_245, n_246, n_247, n_248;
+  wire n_249, n_250, n_251, n_252, n_253, n_254, n_255, n_256;
+  wire n_257, n_258, n_259, n_260, n_261, n_262, n_263, n_264;
+  wire n_265, n_266, n_267, n_268, n_269, n_270, n_271, n_272;
+  wire n_273, n_274, n_275, n_276, n_277, n_278, n_279, n_280;
+  wire n_281, n_282, n_283, n_284, n_285, n_286, n_287, n_288;
+  wire n_289, n_290, n_291, n_292, n_293, n_294, n_295, n_296;
+  wire n_297, n_298, n_299, n_300, n_301, n_302, n_303, n_304;
+  wire n_305, n_306, n_307, n_308, n_309, n_310, n_311, n_312;
+  wire n_313, n_314, n_315, n_316, n_317, n_318, n_319, n_320;
+  wire n_321, n_322, n_323, n_324, n_325, n_326, n_327, n_328;
+  wire n_329, n_330, n_331, n_332, n_333, n_334, n_335, n_336;
+  wire n_337, n_338, n_339, n_340, n_341, n_342, n_343, n_344;
+  wire n_345, n_346, n_347, n_348, n_349, n_350, n_351, n_352;
+  wire n_353, n_354, n_355, n_356, n_357, n_358, n_359, n_360;
+  wire n_361, n_362, n_363, n_364, n_365, n_366, n_367, n_368;
+  wire n_369, n_370, n_371, n_372, n_373, n_374, n_375, n_376;
+  wire n_377, n_378, n_379, n_380, n_381, n_382, n_383, n_384;
+  wire n_385, n_386, n_387, n_388, n_389, n_390, n_391, n_392;
+  wire n_393, n_394, n_395, n_396, n_397, n_398, n_399, n_400;
+  wire n_401, n_402, n_403, n_404, n_405, n_406, n_407, n_408;
+  wire n_409, n_410, n_411, n_412, n_413, n_414, n_415, n_416;
+  wire n_417, n_418, n_419, n_420, n_421, n_422, n_423, n_424;
+  wire n_425, n_426, n_427, n_428, n_430;
+  DFFSNQ_X1 \savings_local_reg[0] (.SN (1'b1), .CLK (clk), .D (n_430),
        .Q (savings_local[0]));
-  OAI21_X1 g92092(.A1 (n_583), .A2 (n_80), .B (n_559), .ZN (n_595));
-  OAI21_X1 g92068(.A1 (n_596), .A2 (n_16), .B (n_572), .ZN (n_594));
-  OAI21_X1 g92069(.A1 (n_596), .A2 (n_7), .B (n_569), .ZN (n_593));
-  OAI21_X1 g92070(.A1 (n_596), .A2 (n_58), .B (n_567), .ZN (n_592));
-  OAI21_X1 g92071(.A1 (n_596), .A2 (n_151), .B (n_568), .ZN (n_591));
-  OAI21_X1 g92047(.A1 (n_596), .A2 (n_77), .B (n_558), .ZN (n_590));
-  NAND2_X1 g92079(.A1 (n_551), .A2 (n_602), .ZN (n_589));
-  OAI21_X1 g92080(.A1 (n_596), .A2 (n_64), .B (n_556), .ZN (n_588));
-  OAI21_X1 g92081(.A1 (n_596), .A2 (n_37), .B (n_555), .ZN (n_587));
-  OAI21_X1 g92082(.A1 (n_596), .A2 (n_204), .B (n_554), .ZN (n_586));
-  OAI21_X1 g92083(.A1 (n_596), .A2 (n_3), .B (n_553), .ZN (n_585));
-  OAI21_X1 g92087(.A1 (n_583), .A2 (n_62), .B (n_539), .ZN (n_584));
-  OAI21_X1 g92088(.A1 (n_583), .A2 (n_60), .B (n_538), .ZN (n_582));
-  DFFSNQ_X1 open_atm_dispense_reg(.SN (1'b1), .CLK (clk), .D (n_543),
+  NOR2_X1 g12433(.A1 (n_428), .A2 (rst), .ZN (n_430));
+  DFFSNQ_X1 \chequing_local_reg[0] (.SN (1'b1), .CLK (clk), .D (n_423),
+       .Q (chequing_local[0]));
+  DFFSNQ_X1 \savings_local_reg[3] (.SN (1'b1), .CLK (clk), .D (n_427),
+       .Q (savings_local[3]));
+  DFFSNQ_X1 \savings_local_reg[5] (.SN (1'b1), .CLK (clk), .D (n_426),
+       .Q (savings_local[5]));
+  DFFSNQ_X1 \savings_local_reg[6] (.SN (1'b1), .CLK (clk), .D (n_424),
+       .Q (savings_local[6]));
+  DFFSNQ_X1 \savings_local_reg[7] (.SN (1'b1), .CLK (clk), .D (n_422),
+       .Q (savings_local[7]));
+  DFFSNQ_X1 \savings_local_reg[8] (.SN (1'b1), .CLK (clk), .D (n_421),
+       .Q (savings_local[8]));
+  DFFSNQ_X1 \savings_local_reg[9] (.SN (1'b1), .CLK (clk), .D (n_420),
+       .Q (savings_local[9]));
+  AOI22_X1 g12461(.A1 (n_401), .A2 (n_163), .B1 (n_402), .B2
+       (savings_local[0]), .ZN (n_428));
+  DFFSNQ_X1 \chequing_local_reg[10] (.SN (1'b1), .CLK (clk), .D
+       (n_411), .Q (chequing_local[10]));
+  DFFSNQ_X1 \chequing_local_reg[5] (.SN (1'b1), .CLK (clk), .D (n_418),
+       .Q (chequing_local[5]));
+  DFFSNQ_X1 \chequing_local_reg[6] (.SN (1'b1), .CLK (clk), .D (n_417),
+       .Q (chequing_local[6]));
+  DFFSNQ_X1 \chequing_local_reg[7] (.SN (1'b1), .CLK (clk), .D (n_416),
+       .Q (chequing_local[7]));
+  DFFSNQ_X1 \chequing_local_reg[8] (.SN (1'b1), .CLK (clk), .D (n_415),
+       .Q (chequing_local[8]));
+  DFFSNQ_X1 \chequing_local_reg[9] (.SN (1'b1), .CLK (clk), .D (n_414),
+       .Q (chequing_local[9]));
+  DFFSNQ_X1 \chequing_local_reg[12] (.SN (1'b1), .CLK (clk), .D
+       (n_412), .Q (chequing_local[12]));
+  DFFSNQ_X1 \chequing_local_reg[11] (.SN (1'b1), .CLK (clk), .D
+       (n_413), .Q (chequing_local[11]));
+  DFFSNQ_X1 \chequing_local_reg[1] (.SN (1'b1), .CLK (clk), .D (n_410),
+       .Q (chequing_local[1]));
+  DFFSNQ_X1 \chequing_local_reg[13] (.SN (1'b1), .CLK (clk), .D
+       (n_419), .Q (chequing_local[13]));
+  DFFSNQ_X1 \chequing_local_reg[2] (.SN (1'b1), .CLK (clk), .D (n_409),
+       .Q (chequing_local[2]));
+  NAND4_X1 g12486(.A1 (n_393), .A2 (n_347), .A3 (n_201), .A4 (n_425),
+       .ZN (n_427));
+  NAND4_X1 g12487(.A1 (n_392), .A2 (n_346), .A3 (n_234), .A4 (n_425),
+       .ZN (n_426));
+  NAND4_X1 g12488(.A1 (n_390), .A2 (n_344), .A3 (n_245), .A4 (n_425),
+       .ZN (n_424));
+  NAND2_X1 g12460(.A1 (n_394), .A2 (n_404), .ZN (n_423));
+  NAND4_X1 g12489(.A1 (n_389), .A2 (n_343), .A3 (n_255), .A4 (n_425),
+       .ZN (n_422));
+  NAND4_X1 g12490(.A1 (n_388), .A2 (n_342), .A3 (n_268), .A4 (n_425),
+       .ZN (n_421));
+  NAND4_X1 g12491(.A1 (n_387), .A2 (n_341), .A3 (n_280), .A4 (n_425),
+       .ZN (n_420));
+  DFFSNQ_X1 \chequing_local_reg[4] (.SN (1'b1), .CLK (clk), .D (n_399),
+       .Q (chequing_local[4]));
+  DFFSNQ_X1 \chequing_local_reg[3] (.SN (1'b1), .CLK (clk), .D (n_400),
+       .Q (chequing_local[3]));
+  DFFSNQ_X1 \savings_local_reg[4] (.SN (1'b1), .CLK (clk), .D (n_407),
+       .Q (savings_local[4]));
+  DFFSNQ_X1 \savings_local_reg[11] (.SN (1'b1), .CLK (clk), .D (n_405),
+       .Q (savings_local[11]));
+  DFFSNQ_X1 \savings_local_reg[12] (.SN (1'b1), .CLK (clk), .D (n_397),
+       .Q (savings_local[12]));
+  DFFSNQ_X1 \savings_local_reg[13] (.SN (1'b1), .CLK (clk), .D (n_398),
+       .Q (savings_local[13]));
+  DFFSNQ_X1 \savings_local_reg[1] (.SN (1'b1), .CLK (clk), .D (n_396),
+       .Q (savings_local[1]));
+  DFFSNQ_X1 \savings_local_reg[2] (.SN (1'b1), .CLK (clk), .D (n_395),
+       .Q (savings_local[2]));
+  DFFSNQ_X1 \savings_local_reg[10] (.SN (1'b1), .CLK (clk), .D (n_408),
+       .Q (savings_local[10]));
+  INV_X1 g12465(.I (n_403), .ZN (n_419));
+  NAND2_X1 g12469(.A1 (n_385), .A2 (n_371), .ZN (n_418));
+  NAND2_X1 g12470(.A1 (n_382), .A2 (n_368), .ZN (n_417));
+  NAND2_X1 g12471(.A1 (n_381), .A2 (n_369), .ZN (n_416));
+  NAND2_X1 g12472(.A1 (n_380), .A2 (n_367), .ZN (n_415));
+  NAND2_X1 g12473(.A1 (n_379), .A2 (n_366), .ZN (n_414));
+  NAND2_X1 g12474(.A1 (n_378), .A2 (n_365), .ZN (n_413));
+  NAND2_X1 g12475(.A1 (n_377), .A2 (n_364), .ZN (n_412));
+  NAND2_X1 g12476(.A1 (n_386), .A2 (n_361), .ZN (n_411));
+  NAND2_X1 g12477(.A1 (n_376), .A2 (n_363), .ZN (n_410));
+  NAND2_X1 g12478(.A1 (n_375), .A2 (n_362), .ZN (n_409));
+  OAI21_X1 g12484(.A1 (n_44), .A2 (n_406), .B (n_349), .ZN (n_408));
+  OAI21_X1 g12483(.A1 (n_406), .A2 (n_204), .B (n_350), .ZN (n_407));
+  OAI21_X1 g12485(.A1 (n_41), .A2 (n_406), .B (n_348), .ZN (n_405));
+  AOI21_X1 g12492(.A1 (n_340), .A2 (n_156), .B (rst), .ZN (n_404));
+  AOI21_X1 g12466(.A1 (chequing_local[13]), .A2 (n_370), .B (n_356),
+       .ZN (n_403));
+  NAND2_X1 g12511(.A1 (n_401), .A2 (amount[0]), .ZN (n_402));
+  NAND2_X1 g12467(.A1 (n_360), .A2 (n_374), .ZN (n_400));
+  NAND2_X1 g12468(.A1 (n_359), .A2 (n_372), .ZN (n_399));
+  OAI21_X1 g12479(.A1 (n_98), .A2 (n_406), .B (n_357), .ZN (n_398));
+  OAI21_X1 g12480(.A1 (n_313), .A2 (n_406), .B (n_355), .ZN (n_397));
+  OAI21_X1 g12481(.A1 (n_406), .A2 (n_105), .B (n_352), .ZN (n_396));
+  OAI21_X1 g12482(.A1 (n_406), .A2 (n_32), .B (n_351), .ZN (n_395));
+  OAI21_X1 g12464(.A1 (n_373), .A2 (n_67), .B (chequing_local[0]), .ZN
+       (n_394));
+  NAND2_X1 g12505(.A1 (n_391), .A2 (savings_local[3]), .ZN (n_393));
+  NAND2_X1 g12506(.A1 (n_391), .A2 (savings_local[5]), .ZN (n_392));
+  NAND2_X1 g12507(.A1 (n_391), .A2 (savings_local[6]), .ZN (n_390));
+  NAND2_X1 g12508(.A1 (n_391), .A2 (savings_local[7]), .ZN (n_389));
+  NAND2_X1 g12509(.A1 (n_391), .A2 (savings_local[8]), .ZN (n_388));
+  NAND2_X1 g12510(.A1 (n_391), .A2 (savings_local[9]), .ZN (n_387));
+  AOI22_X1 g12524(.A1 (n_384), .A2 (n_288), .B1 (n_290), .B2 (n_383),
+       .ZN (n_386));
+  DFFSNQ_X1 open_atm_dispense_reg(.SN (1'b1), .CLK (clk), .D (n_338),
        .Q (open_atm_dispense));
-  OAI21_X1 g92089(.A1 (n_583), .A2 (n_87), .B (n_535), .ZN (n_581));
-  DFFSNQ_X1 \state_reg[0] (.SN (1'b1), .CLK (clk), .D (n_544), .Q
+  AOI22_X1 g12525(.A1 (n_384), .A2 (n_225), .B1 (n_227), .B2 (n_383),
+       .ZN (n_385));
+  DFFSNQ_X1 \state_reg[0] (.SN (1'b1), .CLK (clk), .D (n_339), .Q
        (state[0]));
-  OAI21_X1 g92066(.A1 (n_575), .A2 (n_123), .B (n_546), .ZN (n_580));
-  OAI21_X1 g92090(.A1 (n_583), .A2 (n_4), .B (n_534), .ZN (n_579));
-  OAI21_X1 g92091(.A1 (n_583), .A2 (n_1), .B (n_533), .ZN (n_578));
-  OAI21_X1 g92094(.A1 (n_583), .A2 (n_38), .B (n_541), .ZN (n_577));
-  OAI21_X1 g92096(.A1 (n_575), .A2 (n_249), .B (n_540), .ZN (n_576));
-  OAI21_X1 g92072(.A1 (n_575), .A2 (n_43), .B (n_547), .ZN (n_574));
-  AOI22_X1 g92098(.A1 (n_571), .A2 (n_517), .B1 (n_487), .B2 (n_570),
-       .ZN (n_573));
-  AOI22_X1 g92099(.A1 (n_571), .A2 (n_511), .B1 (n_492), .B2 (n_570),
-       .ZN (n_572));
-  AOI22_X1 g92100(.A1 (n_571), .A2 (n_507), .B1 (n_437), .B2 (n_570),
-       .ZN (n_569));
-  AOI22_X1 g92101(.A1 (n_571), .A2 (n_499), .B1 (n_489), .B2 (n_570),
-       .ZN (n_568));
-  AOI22_X1 g92102(.A1 (n_571), .A2 (n_515), .B1 (n_486), .B2 (n_570),
-       .ZN (n_567));
-  NAND2_X1 g92103(.A1 (n_564), .A2 (chequing_local[3]), .ZN (n_566));
-  NAND2_X1 g92104(.A1 (n_564), .A2 (chequing_local[4]), .ZN (n_565));
-  NAND2_X1 g92106(.A1 (n_561), .A2 (savings_local[3]), .ZN (n_563));
-  NAND2_X1 g92107(.A1 (n_561), .A2 (savings_local[6]), .ZN (n_562));
-  NAND2_X1 g92108(.A1 (n_561), .A2 (savings_local[9]), .ZN (n_560));
-  AOI21_X1 g92110(.A1 (n_505), .A2 (n_484), .B (n_531), .ZN (n_559));
-  AOI22_X1 g92075(.A1 (n_571), .A2 (n_518), .B1 (n_510), .B2 (n_570),
-       .ZN (n_558));
-  NOR2_X1 g92078(.A1 (n_527), .A2 (rst), .ZN (n_557));
-  AOI22_X1 g92121(.A1 (n_571), .A2 (n_642), .B1 (n_242), .B2 (n_570),
-       .ZN (n_556));
-  AOI22_X1 g92122(.A1 (n_571), .A2 (n_282), .B1 (n_256), .B2 (n_570),
-       .ZN (n_555));
-  AOI22_X1 g92123(.A1 (n_571), .A2 (n_405), .B1 (n_441), .B2 (n_570),
-       .ZN (n_554));
-  AOI22_X1 g92124(.A1 (n_571), .A2 (n_440), .B1 (n_459), .B2 (n_570),
-       .ZN (n_553));
-  AOI22_X1 g92125(.A1 (n_571), .A2 (n_428), .B1 (n_435), .B2 (n_570),
-       .ZN (n_552));
-  XNOR2_X1 g92126(.A1 (n_516), .A2 (chequing_local[0]), .ZN (n_551));
-  NAND2_X1 g92132(.A1 (n_548), .A2 (n_344), .ZN (n_550));
-  NAND2_X1 g92133(.A1 (n_548), .A2 (n_366), .ZN (n_549));
-  INV_X1 g92146(.I (n_530), .ZN (n_596));
-  AOI21_X1 g92093(.A1 (n_545), .A2 (n_389), .B (n_514), .ZN (n_547));
-  AOI22_X1 g92097(.A1 (n_545), .A2 (n_490), .B1 (n_512), .B2 (n_443),
-       .ZN (n_546));
-  OR2_X1 g92105(.A1 (n_542), .A2 (n_293), .Z (n_544));
-  OR2_X1 g92109(.A1 (n_542), .A2 (n_244), .Z (n_543));
-  NOR3_X1 g92111(.A1 (n_506), .A2 (n_513), .A3 (n_470), .ZN (n_541));
-  AOI21_X1 g92113(.A1 (n_545), .A2 (n_402), .B (n_483), .ZN (n_540));
-  AOI22_X1 g92116(.A1 (n_537), .A2 (n_481), .B1 (n_482), .B2 (n_536),
-       .ZN (n_539));
-  AOI22_X1 g92117(.A1 (n_537), .A2 (n_479), .B1 (n_501), .B2 (n_536),
-       .ZN (n_538));
-  AOI22_X1 g92118(.A1 (n_537), .A2 (n_270), .B1 (n_271), .B2 (n_536),
-       .ZN (n_535));
-  AOI22_X1 g92119(.A1 (n_537), .A2 (n_280), .B1 (n_536), .B2 (n_278),
-       .ZN (n_534));
-  AOI22_X1 g92120(.A1 (n_537), .A2 (n_342), .B1 (n_391), .B2 (n_536),
-       .ZN (n_533));
-  NAND2_X1 g92129(.A1 (n_545), .A2 (n_475), .ZN (n_532));
-  NAND4_X1 g92134(.A1 (n_495), .A2 (n_498), .A3 (n_309), .A4 (n_313),
-       .ZN (n_531));
-  INV_X1 g92135(.I (n_575), .ZN (n_561));
-  OAI22_X1 g92144(.A1 (n_529), .A2 (state[0]), .B1 (n_523), .B2
-       (n_528), .ZN (n_564));
-  OAI22_X1 g92147(.A1 (n_529), .A2 (n_520), .B1 (n_392), .B2 (n_528),
-       .ZN (n_530));
-  AOI22_X1 g92114(.A1 (n_461), .A2 (savings_local[0]), .B1 (n_503), .B2
-       (n_268), .ZN (n_527));
-  NAND2_X1 g92127(.A1 (n_545), .A2 (n_364), .ZN (n_526));
-  NAND2_X1 g92128(.A1 (n_545), .A2 (n_416), .ZN (n_525));
-  NAND2_X1 g92131(.A1 (n_500), .A2 (n_508), .ZN (n_524));
-  AOI22_X1 g92136(.A1 (n_522), .A2 (n_523), .B1 (state[0]), .B2
-       (n_521), .ZN (n_575));
-  AOI22_X1 g92137(.A1 (n_522), .A2 (n_519), .B1 (n_521), .B2 (n_274),
-       .ZN (n_583));
-  NOR4_X1 g92138(.A1 (n_456), .A2 (n_473), .A3 (n_237), .A4 (n_520),
-       .ZN (n_542));
-  AND2_X2 g92153(.A1 (n_529), .A2 (n_519), .Z (n_571));
-  AND2_X1 g92154(.A1 (n_529), .A2 (n_523), .Z (n_548));
-  NAND2_X1 g92155(.A1 (n_471), .A2 (n_493), .ZN (n_518));
-  NAND4_X1 g92156(.A1 (n_447), .A2 (n_462), .A3 (n_319), .A4 (n_267),
-       .ZN (n_517));
-  OAI21_X1 g92161(.A1 (n_410), .A2 (n_34), .B (n_496), .ZN (n_516));
-  XOR2_X1 g92174(.A1 (n_465), .A2 (n_485), .Z (n_515));
-  OAI21_X1 g92112(.A1 (n_476), .A2 (n_502), .B (n_602), .ZN (n_514));
-  NOR2_X1 g92148(.A1 (n_522), .A2 (n_520), .ZN (n_537));
-  NOR2_X1 g92149(.A1 (n_522), .A2 (state[0]), .ZN (n_545));
-  NAND3_X1 g92160(.A1 (n_467), .A2 (n_314), .A3 (n_311), .ZN (n_513));
-  NOR4_X1 g92162(.A1 (n_454), .A2 (n_225), .A3 (n_210), .A4 (n_317),
-       .ZN (n_512));
-  XNOR2_X1 g92175(.A1 (n_450), .A2 (n_491), .ZN (n_511));
-  XOR2_X1 g92115(.A1 (n_460), .A2 (n_253), .Z (n_510));
-  NAND2_X1 g92130(.A1 (n_458), .A2 (n_508), .ZN (n_509));
-  XOR2_X1 g92140(.A1 (n_442), .A2 (n_436), .Z (n_507));
-  NOR2_X1 g92150(.A1 (n_504), .A2 (n_451), .ZN (n_506));
-  NOR2_X1 g92151(.A1 (n_504), .A2 (n_158), .ZN (n_505));
-  NAND2_X1 g92157(.A1 (n_457), .A2 (n_502), .ZN (n_503));
-  XOR2_X1 g92166(.A1 (n_497), .A2 (n_477), .Z (n_501));
-  XOR2_X1 g92168(.A1 (n_432), .A2 (n_474), .Z (n_500));
-  XOR2_X1 g92173(.A1 (n_429), .A2 (n_488), .Z (n_499));
-  AOI21_X1 g92188(.A1 (n_431), .A2 (n_425), .B (n_446), .ZN (n_529));
-  NAND4_X1 g92192(.A1 (n_497), .A2 (n_536), .A3 (n_494), .A4 (n_194),
-       .ZN (n_498));
-  NAND4_X1 g92193(.A1 (n_472), .A2 (n_523), .A3 (n_445), .A4
-       (amount[0]), .ZN (n_496));
-  OR4_X1 g92196(.A1 (n_497), .A2 (n_468), .A3 (n_494), .A4 (n_312), .Z
-       (n_495));
-  NAND4_X1 g92220(.A1 (n_464), .A2 (n_463), .A3 (n_193), .A4 (n_252),
-       .ZN (n_493));
-  XOR2_X1 g92139(.A1 (n_421), .A2 (n_491), .Z (n_492));
-  XOR2_X1 g92141(.A1 (n_422), .A2 (n_452), .Z (n_490));
-  XOR2_X1 g92142(.A1 (n_417), .A2 (n_488), .Z (n_489));
-  XOR2_X1 g92143(.A1 (n_418), .A2 (n_264), .Z (n_487));
-  XOR2_X1 g92145(.A1 (n_423), .A2 (n_485), .Z (n_486));
-  OAI21_X1 g92158(.A1 (n_478), .A2 (n_230), .B (n_114), .ZN (n_484));
-  OAI21_X1 g92163(.A1 (n_403), .A2 (n_502), .B (n_602), .ZN (n_483));
-  XOR2_X1 g92164(.A1 (n_469), .A2 (n_480), .Z (n_482));
-  XNOR2_X1 g92165(.A1 (n_407), .A2 (n_480), .ZN (n_481));
-  XNOR2_X1 g92167(.A1 (n_478), .A2 (n_477), .ZN (n_479));
-  XOR2_X1 g92170(.A1 (n_409), .A2 (n_388), .Z (n_476));
-  XOR2_X1 g92172(.A1 (n_400), .A2 (n_474), .Z (n_475));
-  NOR2_X1 g92177(.A1 (n_472), .A2 (account_selection), .ZN (n_473));
-  OAI21_X1 g92182(.A1 (n_399), .A2 (n_374), .B (n_433), .ZN (n_522));
-  AOI21_X1 g92189(.A1 (n_444), .A2 (n_226), .B (n_430), .ZN (n_471));
-  NOR4_X1 g92190(.A1 (n_469), .A2 (n_468), .A3 (n_466), .A4 (n_321),
-       .ZN (n_470));
-  NAND4_X1 g92191(.A1 (n_469), .A2 (n_536), .A3 (n_466), .A4 (n_72),
-       .ZN (n_467));
-  NAND2_X1 g92204(.A1 (n_464), .A2 (n_463), .ZN (n_465));
-  OR4_X1 g92222(.A1 (n_449), .A2 (n_448), .A3 (n_266), .A4 (n_265), .Z
-       (n_462));
-  NAND3_X1 g92152(.A1 (n_419), .A2 (n_349), .A3 (amount[0]), .ZN
-       (n_461));
-  OAI22_X1 g92159(.A1 (n_434), .A2 (n_330), .B1 (n_396), .B2 (n_28),
-       .ZN (n_460));
-  XOR2_X1 g92169(.A1 (n_394), .A2 (n_438), .Z (n_459));
-  XOR2_X1 g92171(.A1 (n_453), .A2 (n_414), .Z (n_458));
-  NAND2_X1 g92178(.A1 (n_455), .A2 (n_348), .ZN (n_457));
-  NOR2_X1 g92179(.A1 (n_455), .A2 (n_236), .ZN (n_456));
-  NAND3_X1 g92187(.A1 (n_455), .A2 (n_261), .A3 (n_519), .ZN (n_504));
-  NOR4_X1 g92194(.A1 (n_453), .A2 (n_452), .A3 (n_223), .A4 (rst), .ZN
-       (n_454));
-  XOR2_X1 g92198(.A1 (n_398), .A2 (n_466), .Z (n_451));
-  NOR2_X1 g92205(.A1 (n_449), .A2 (n_448), .ZN (n_450));
-  NAND2_X1 g92212(.A1 (n_449), .A2 (n_318), .ZN (n_447));
-  NAND2_X1 g92215(.A1 (n_426), .A2 (n_445), .ZN (n_446));
-  INV_X1 g92240(.I (n_444), .ZN (n_464));
-  DFFSNQ_X1 \state_reg[1] (.SN (1'b1), .CLK (clk), .D (n_393), .Q
-       (state[1]));
-  NAND3_X1 g92181(.A1 (n_453), .A2 (n_452), .A3 (n_224), .ZN (n_443));
-  OAI21_X1 g92183(.A1 (n_439), .A2 (n_353), .B (n_178), .ZN (n_442));
-  XOR2_X1 g92199(.A1 (n_387), .A2 (n_404), .Z (n_441));
-  XNOR2_X1 g92200(.A1 (n_439), .A2 (n_438), .ZN (n_440));
-  XOR2_X1 g92201(.A1 (n_385), .A2 (n_436), .Z (n_437));
-  XOR2_X1 g92203(.A1 (n_434), .A2 (n_427), .Z (n_435));
-  AOI21_X1 g92211(.A1 (n_641), .A2 (n_294), .B (n_307), .ZN (n_433));
-  OAI21_X1 g92214(.A1 (n_380), .A2 (n_73), .B (n_136), .ZN (n_432));
-  OAI22_X1 g92216(.A1 (n_431), .A2 (n_424), .B1 (n_381), .B2 (n_289),
-       .ZN (n_472));
-  OAI21_X1 g92218(.A1 (n_463), .A2 (n_227), .B (n_254), .ZN (n_430));
-  AOI21_X1 g92219(.A1 (n_408), .A2 (n_214), .B (n_397), .ZN (n_497));
-  OAI21_X1 g92224(.A1 (n_431), .A2 (n_201), .B (n_197), .ZN (n_429));
-  XNOR2_X1 g92229(.A1 (n_431), .A2 (n_427), .ZN (n_428));
-  NOR2_X1 g92241(.A1 (n_431), .A2 (n_305), .ZN (n_444));
-  NAND2_X1 g92243(.A1 (n_425), .A2 (n_424), .ZN (n_426));
-  NOR2_X1 g92247(.A1 (n_431), .A2 (n_161), .ZN (n_449));
-  AOI21_X1 g92180(.A1 (n_420), .A2 (n_329), .B (n_395), .ZN (n_423));
-  OAI21_X1 g92184(.A1 (n_415), .A2 (n_128), .B (n_122), .ZN (n_422));
-  AOI21_X1 g92185(.A1 (n_420), .A2 (n_239), .B (n_323), .ZN (n_421));
-  NAND3_X1 g92186(.A1 (n_641), .A2 (n_412), .A3 (n_502), .ZN (n_419));
-  AOI21_X1 g92195(.A1 (n_420), .A2 (n_263), .B (n_332), .ZN (n_418));
-  AOI22_X1 g92197(.A1 (n_420), .A2 (n_120), .B1 (chequing_local[8]),
-       .B2 (amount[8]), .ZN (n_417));
-  XNOR2_X1 g92202(.A1 (n_415), .A2 (n_414), .ZN (n_416));
-  NAND2_X1 g92206(.A1 (n_641), .A2 (n_412), .ZN (n_455));
-  OR2_X1 g92209(.A1 (n_383), .A2 (n_410), .Z (n_411));
-  OAI21_X1 g92210(.A1 (n_370), .A2 (n_92), .B (n_147), .ZN (n_409));
-  AOI21_X1 g92213(.A1 (n_408), .A2 (n_143), .B (n_272), .ZN (n_469));
-  AOI22_X1 g92217(.A1 (n_406), .A2 (n_284), .B1 (n_359), .B2 (n_206),
-       .ZN (n_478));
-  AOI21_X1 g92221(.A1 (n_406), .A2 (n_218), .B (n_320), .ZN (n_407));
-  XNOR2_X1 g92226(.A1 (n_372), .A2 (n_404), .ZN (n_405));
-  XOR2_X1 g92230(.A1 (n_408), .A2 (n_401), .Z (n_403));
-  XOR2_X1 g92231(.A1 (n_406), .A2 (n_401), .Z (n_402));
-  AOI22_X1 g92232(.A1 (n_406), .A2 (n_106), .B1 (savings_local[8]), .B2
-       (n_66), .ZN (n_400));
-  INV_X1 g92248(.I (n_641), .ZN (n_399));
-  NAND4_X1 g92250(.A1 (n_356), .A2 (n_360), .A3 (n_358), .A4 (n_165),
-       .ZN (n_398));
-  OAI21_X1 g92251(.A1 (n_357), .A2 (n_213), .B (n_39), .ZN (n_397));
-  AOI21_X1 g92207(.A1 (chequing_local[12]), .A2 (amount[12]), .B
-       (n_395), .ZN (n_396));
-  AOI21_X1 g92208(.A1 (n_390), .A2 (n_333), .B (n_189), .ZN (n_453));
-  AOI21_X1 g92223(.A1 (n_386), .A2 (n_185), .B (n_303), .ZN (n_394));
-  OAI22_X1 g92225(.A1 (n_367), .A2 (n_392), .B1 (n_173), .B2 (n_520),
-       .ZN (n_393));
-  XOR2_X1 g92227(.A1 (n_390), .A2 (n_340), .Z (n_391));
-  XNOR2_X1 g92228(.A1 (n_369), .A2 (n_388), .ZN (n_389));
-  NOR2_X1 g92235(.A1 (n_386), .A2 (n_138), .ZN (n_387));
-  AOI21_X1 g92236(.A1 (n_382), .A2 (n_212), .B (n_316), .ZN (n_385));
-  INV_X1 g92237(.I (n_420), .ZN (n_434));
-  NAND2_X1 g92245(.A1 (n_363), .A2 (n_508), .ZN (n_384));
-  AOI21_X1 g92246(.A1 (n_371), .A2 (n_208), .B (n_298), .ZN (n_439));
-  XOR2_X1 g92252(.A1 (n_382), .A2 (n_365), .Z (n_383));
-  NOR2_X1 g92253(.A1 (n_379), .A2 (n_258), .ZN (n_381));
-  INV_X1 g92254(.I (n_408), .ZN (n_380));
-  NAND2_X1 g92258(.A1 (n_379), .A2 (n_234), .ZN (n_463));
-  NAND2_X1 g92262(.A1 (n_352), .A2 (n_288), .ZN (n_425));
-  NOR2_X1 g92264(.A1 (n_354), .A2 (n_179), .ZN (n_431));
-  NAND2_X1 g92234(.A1 (n_374), .A2 (n_295), .ZN (n_412));
-  OAI21_X1 g92238(.A1 (n_315), .A2 (n_250), .B (n_345), .ZN (n_420));
-  AOI21_X1 g92239(.A1 (n_331), .A2 (n_132), .B (n_291), .ZN (n_395));
-  OR2_X1 g92242(.A1 (n_347), .A2 (n_410), .Z (n_373));
-  AOI21_X1 g92244(.A1 (n_368), .A2 (n_207), .B (n_292), .ZN (n_415));
-  NAND2_X1 g92255(.A1 (n_334), .A2 (n_326), .ZN (n_408));
-  NOR2_X1 g92259(.A1 (n_371), .A2 (n_117), .ZN (n_372));
-  NAND2_X1 g92263(.A1 (n_339), .A2 (n_346), .ZN (n_406));
-  INV_X1 g92267(.I (n_390), .ZN (n_370));
-  NOR2_X1 g92256(.A1 (n_336), .A2 (n_137), .ZN (n_386));
-  NOR2_X1 g92257(.A1 (n_368), .A2 (n_166), .ZN (n_369));
-  AOI21_X1 g92261(.A1 (n_327), .A2 (n_302), .B (n_202), .ZN (n_367));
-  OAI21_X1 g92268(.A1 (n_362), .A2 (n_24), .B (n_246), .ZN (n_390));
-  DFFSNQ_X1 \state_reg[2] (.SN (1'b1), .CLK (clk), .D (n_328), .Q
-       (state[2]));
-  XNOR2_X1 g92272(.A1 (n_335), .A2 (n_365), .ZN (n_366));
-  XOR2_X1 g92273(.A1 (n_306), .A2 (n_361), .Z (n_364));
-  XOR2_X1 g92275(.A1 (n_362), .A2 (n_361), .Z (n_363));
-  NAND2_X1 g92281(.A1 (n_351), .A2 (n_200), .ZN (n_379));
-  NAND2_X1 g92282(.A1 (n_308), .A2 (n_355), .ZN (n_360));
-  NAND2_X1 g92283(.A1 (n_358), .A2 (n_350), .ZN (n_359));
-  NOR2_X1 g92285(.A1 (n_322), .A2 (n_310), .ZN (n_357));
-  NAND3_X1 g92288(.A1 (n_337), .A2 (n_338), .A3 (n_355), .ZN (n_356));
-  NOR4_X1 g92289(.A1 (n_301), .A2 (n_209), .A3 (n_353), .A4 (n_177),
-       .ZN (n_354));
-  NAND2_X1 g92290(.A1 (n_351), .A2 (n_259), .ZN (n_352));
-  NAND3_X1 g92291(.A1 (n_358), .A2 (n_350), .A3 (n_229), .ZN (n_377));
-  OR2_X1 g92304(.A1 (n_508), .A2 (n_348), .Z (n_349));
-  XOR2_X1 g92270(.A1 (n_287), .A2 (n_343), .Z (n_347));
-  OAI21_X1 g92260(.A1 (n_341), .A2 (n_290), .B (n_346), .ZN (n_374));
-  AOI22_X1 g92266(.A1 (n_324), .A2 (n_251), .B1 (chequing_local[7]),
-       .B2 (amount[7]), .ZN (n_345));
-  XOR2_X1 g92271(.A1 (n_283), .A2 (n_343), .Z (n_344));
-  XOR2_X1 g92274(.A1 (n_341), .A2 (n_340), .Z (n_342));
-  NAND2_X1 g92277(.A1 (n_338), .A2 (n_337), .ZN (n_339));
-  INV_X1 g92278(.I (n_336), .ZN (n_382));
-  NOR2_X1 g92284(.A1 (n_335), .A2 (n_129), .ZN (n_371));
-  NAND4_X1 g92292(.A1 (n_304), .A2 (n_333), .A3 (n_325), .A4 (n_25),
-       .ZN (n_334));
-  INV_X1 g92293(.I (n_331), .ZN (n_332));
-  NAND2_X1 g92297(.A1 (n_329), .A2 (n_29), .ZN (n_330));
-  DFFSNQ_X1 \state_reg[3] (.SN (1'b1), .CLK (clk), .D (n_275), .Q
-       (state[3]));
-  OAI22_X1 g92269(.A1 (n_257), .A2 (rst), .B1 (n_327), .B2 (n_392), .ZN
-       (n_328));
-  AOI21_X1 g92276(.A1 (n_247), .A2 (n_325), .B (n_146), .ZN (n_326));
-  NAND2_X1 g92279(.A1 (n_324), .A2 (n_42), .ZN (n_336));
-  NOR2_X1 g92280(.A1 (n_341), .A2 (n_167), .ZN (n_368));
-  AOI22_X1 g92294(.A1 (n_323), .A2 (n_238), .B1 (chequing_local[10]),
-       .B2 (amount[10]), .ZN (n_331));
-  NAND2_X1 g92298(.A1 (n_448), .A2 (n_235), .ZN (n_351));
-  NOR2_X1 g92301(.A1 (n_273), .A2 (n_321), .ZN (n_322));
-  NAND2_X1 g92302(.A1 (n_320), .A2 (n_217), .ZN (n_358));
-  NAND2_X1 g92303(.A1 (n_318), .A2 (n_448), .ZN (n_319));
-  NOR2_X1 g92307(.A1 (n_508), .A2 (rst), .ZN (n_317));
-  INV_X1 g92313(.I (n_315), .ZN (n_316));
-  NAND3_X1 g92318(.A1 (n_536), .A2 (n_466), .A3 (n_321), .ZN (n_314));
-  NAND3_X1 g92319(.A1 (n_536), .A2 (n_494), .A3 (n_312), .ZN (n_313));
-  NAND3_X1 g92322(.A1 (n_536), .A2 (n_170), .A3 (n_310), .ZN (n_311));
-  NAND2_X1 g92324(.A1 (n_536), .A2 (n_195), .ZN (n_309));
-  INV_X1 g92328(.I (n_346), .ZN (n_308));
-  NOR2_X1 g92346(.A1 (state[0]), .A2 (n_307), .ZN (n_348));
-  DFFSNQ_X1 open_atm_receive_reg(.SN (1'b1), .CLK (clk), .D (n_248), .Q
-       (open_atm_receive));
-  NAND2_X1 g92300(.A1 (n_297), .A2 (n_296), .ZN (n_306));
-  NOR2_X1 g92305(.A1 (n_299), .A2 (n_300), .ZN (n_335));
-  OR2_X1 g92308(.A1 (n_305), .A2 (n_260), .Z (n_424));
-  INV_X1 g92311(.I (n_304), .ZN (n_362));
-  AOI21_X1 g92314(.A1 (n_303), .A2 (n_135), .B (n_31), .ZN (n_315));
-  OAI21_X1 g92315(.A1 (n_205), .A2 (n_186), .B (n_231), .ZN (n_302));
-  NOR3_X1 g92316(.A1 (n_300), .A2 (n_299), .A3 (n_298), .ZN (n_301));
-  NAND3_X1 g92317(.A1 (n_297), .A2 (n_296), .A3 (n_174), .ZN (n_337));
-  INV_X1 g92320(.I (n_294), .ZN (n_295));
-  OAI22_X1 g92323(.A1 (n_216), .A2 (n_171), .B1 (n_125), .B2 (n_392),
-       .ZN (n_293));
-  AOI22_X1 g92329(.A1 (n_233), .A2 (n_292), .B1 (n_124), .B2 (n_95),
-       .ZN (n_346));
-  INV_X1 g92337(.I (n_508), .ZN (n_502));
-  INV_X1 g92339(.I (n_536), .ZN (n_468));
-  NOR2_X1 g92344(.A1 (n_262), .A2 (n_291), .ZN (n_329));
-  NOR2_X1 g92350(.A1 (n_290), .A2 (n_175), .ZN (n_338));
-  INV_X1 g92286(.I (n_288), .ZN (n_289));
-  NAND2_X1 g92299(.A1 (n_286), .A2 (n_285), .ZN (n_287));
-  NAND3_X1 g92306(.A1 (n_286), .A2 (n_285), .A3 (n_11), .ZN (n_324));
-  AOI21_X1 g92309(.A1 (n_279), .A2 (n_121), .B (n_176), .ZN (n_341));
-  OAI21_X1 g92312(.A1 (n_276), .A2 (n_26), .B (n_139), .ZN (n_304));
-  NAND2_X1 g92321(.A1 (n_284), .A2 (n_150), .ZN (n_294));
-  OAI21_X1 g92326(.A1 (n_281), .A2 (n_245), .B (n_180), .ZN (n_283));
-  XOR2_X1 g92331(.A1 (n_255), .A2 (n_281), .Z (n_282));
-  XOR2_X1 g92332(.A1 (n_277), .A2 (n_279), .Z (n_280));
-  XOR2_X1 g92333(.A1 (n_277), .A2 (n_276), .Z (n_278));
-  NOR2_X1 g92338(.A1 (n_523), .A2 (n_521), .ZN (n_508));
-  NOR2_X1 g92340(.A1 (n_392), .A2 (n_521), .ZN (n_536));
-  NOR2_X1 g92341(.A1 (n_221), .A2 (n_84), .ZN (n_448));
-  NOR2_X1 g92343(.A1 (n_220), .A2 (n_83), .ZN (n_320));
-  OAI21_X1 g92345(.A1 (n_53), .A2 (n_85), .B (n_203), .ZN (n_275));
-  NAND2_X1 g92347(.A1 (state[0]), .A2 (n_528), .ZN (n_410));
-  AND2_X1 g92353(.A1 (n_528), .A2 (n_274), .Z (n_570));
-  INV_X1 g92355(.I (n_272), .ZN (n_273));
-  XOR2_X1 g92367(.A1 (n_269), .A2 (n_86), .Z (n_271));
-  XNOR2_X1 g92368(.A1 (n_269), .A2 (n_268), .ZN (n_270));
-  AOI22_X1 g92369(.A1 (n_266), .A2 (n_265), .B1 (n_264), .B2 (n_215),
-       .ZN (n_267));
-  INV_X1 g92373(.I (n_262), .ZN (n_263));
-  INV_X1 g92376(.I (n_261), .ZN (n_307));
-  OAI21_X1 g92287(.A1 (n_127), .A2 (n_260), .B (n_192), .ZN (n_288));
-  NOR2_X1 g92310(.A1 (n_258), .A2 (n_199), .ZN (n_259));
-  AOI22_X1 g92327(.A1 (state[2]), .A2 (n_152), .B1 (n_222), .B2 (n_6),
-       .ZN (n_257));
-  XOR2_X1 g92330(.A1 (n_255), .A2 (n_228), .Z (n_256));
-  AOI22_X1 g92334(.A1 (n_253), .A2 (n_162), .B1 (n_252), .B2 (n_191),
-       .ZN (n_254));
-  NAND2_X1 g92336(.A1 (n_279), .A2 (n_101), .ZN (n_297));
-  NOR3_X1 g92354(.A1 (n_211), .A2 (n_250), .A3 (n_41), .ZN (n_251));
-  AOI21_X1 g92356(.A1 (n_249), .A2 (n_22), .B (n_184), .ZN (n_272));
-  AOI21_X1 g92357(.A1 (n_15), .A2 (n_134), .B (n_183), .ZN (n_323));
-  OAI22_X1 g92358(.A1 (n_172), .A2 (n_187), .B1 (n_243), .B2 (n_52),
-       .ZN (n_248));
-  OAI21_X1 g92359(.A1 (n_142), .A2 (n_246), .B (n_190), .ZN (n_247));
-  NOR3_X1 g92360(.A1 (n_281), .A2 (n_198), .A3 (n_245), .ZN (n_300));
-  AOI21_X1 g92363(.A1 (n_243), .A2 (state[3]), .B (n_36), .ZN (n_244));
-  XOR2_X1 g92365(.A1 (n_240), .A2 (n_153), .Z (n_242));
-  NAND2_X1 g92374(.A1 (n_239), .A2 (n_238), .ZN (n_262));
-  NOR2_X1 g92375(.A1 (n_237), .A2 (account_selection), .ZN (n_445));
-  NOR2_X1 g92377(.A1 (n_237), .A2 (n_236), .ZN (n_261));
-  NAND3_X1 g92404(.A1 (n_160), .A2 (n_235), .A3 (n_234), .ZN (n_305));
-  NAND2_X1 g92405(.A1 (n_233), .A2 (n_168), .ZN (n_290));
-  AND3_X1 g92407(.A1 (n_523), .A2 (n_231), .A3 (n_327), .Z (ready));
-  OAI21_X1 g92325(.A1 (n_118), .A2 (n_230), .B (n_229), .ZN (n_376));
-  NAND2_X1 g92335(.A1 (n_228), .A2 (n_140), .ZN (n_286));
-  INV_X1 g92351(.I (n_226), .ZN (n_227));
-  AND3_X1 g92364(.A1 (n_452), .A2 (n_224), .A3 (n_223), .Z (n_225));
-  NAND2_X1 g92370(.A1 (n_222), .A2 (account_selection), .ZN (n_521));
-  AND2_X1 g92378(.A1 (n_222), .A2 (n_236), .Z (n_528));
-  AOI21_X1 g92380(.A1 (chequing_local[8]), .A2 (n_219), .B
-       (chequing_local[9]), .ZN (n_221));
-  AOI21_X1 g92382(.A1 (savings_local[8]), .A2 (n_219), .B
-       (savings_local[9]), .ZN (n_220));
-  AND2_X1 g92384(.A1 (n_218), .A2 (n_217), .Z (n_355));
-  INV_X1 g92385(.I (n_188), .ZN (n_216));
-  NOR2_X1 g92388(.A1 (n_264), .A2 (n_215), .ZN (n_318));
-  NOR3_X1 g92389(.A1 (n_144), .A2 (n_213), .A3 (n_321), .ZN (n_214));
-  INV_X1 g92391(.I (n_211), .ZN (n_212));
-  NOR3_X1 g92393(.A1 (n_452), .A2 (n_145), .A3 (rst), .ZN (n_210));
-  NAND2_X1 g92398(.A1 (n_130), .A2 (n_208), .ZN (n_209));
-  AND2_X1 g92400(.A1 (n_148), .A2 (n_207), .Z (n_292));
-  AND3_X1 g92402(.A1 (n_218), .A2 (n_206), .A3 (n_217), .Z (n_284));
-  NAND4_X1 g92403(.A1 (n_78), .A2 (n_12), .A3 (pin[7]), .A4 (pin[6]),
-       .ZN (n_205));
-  OAI22_X1 g92409(.A1 (n_17), .A2 (n_71), .B1 (n_204), .B2 (n_61), .ZN
-       (n_303));
-  AOI22_X1 g92412(.A1 (n_202), .A2 (n_519), .B1 (n_103), .B2 (n_274),
-       .ZN (n_203));
-  NOR2_X1 g92459(.A1 (n_201), .A2 (n_196), .ZN (n_427));
-  INV_X1 g92468(.I (n_199), .ZN (n_200));
-  NOR2_X1 g92453(.A1 (n_198), .A2 (n_112), .ZN (n_343));
-  INV_X1 g92617(.I (n_196), .ZN (n_197));
-  NOR2_X1 g92342(.A1 (n_494), .A2 (n_194), .ZN (n_195));
-  NAND2_X1 g92349(.A1 (n_193), .A2 (n_192), .ZN (n_258));
-  NOR2_X1 g92352(.A1 (n_252), .A2 (n_191), .ZN (n_226));
-  INV_X1 g92371(.I (n_189), .ZN (n_190));
-  AOI21_X1 g92386(.A1 (n_202), .A2 (n_236), .B (n_187), .ZN (n_188));
-  OAI21_X1 g92387(.A1 (n_268), .A2 (n_164), .B (n_97), .ZN (n_279));
-  NAND3_X1 g92390(.A1 (n_79), .A2 (n_9), .A3 (pin[1]), .ZN (n_186));
-  NAND2_X1 g92392(.A1 (n_89), .A2 (n_185), .ZN (n_211));
-  OAI21_X1 g92394(.A1 (savings_local[9]), .A2 (n_182), .B (n_181), .ZN
-       (n_184));
-  OAI21_X1 g92395(.A1 (chequing_local[9]), .A2 (n_182), .B (n_181), .ZN
-       (n_183));
-  AOI21_X1 g92396(.A1 (n_116), .A2 (n_163), .B (n_107), .ZN (n_298));
-  OAI21_X1 g92397(.A1 (n_198), .A2 (n_180), .B (n_111), .ZN (n_299));
-  AOI21_X1 g92399(.A1 (n_109), .A2 (n_178), .B (n_177), .ZN (n_179));
-  OAI21_X1 g92401(.A1 (n_175), .A2 (n_296), .B (n_174), .ZN (n_176));
-  AOI21_X1 g92406(.A1 (n_172), .A2 (state[3]), .B (n_169), .ZN (n_173));
-  AOI21_X1 g92408(.A1 (savings_local[1]), .A2 (amount[1]), .B (n_88),
+  AOI22_X1 g12526(.A1 (n_384), .A2 (n_236), .B1 (n_242), .B2 (n_383),
+       .ZN (n_382));
+  AOI22_X1 g12527(.A1 (n_384), .A2 (n_254), .B1 (n_250), .B2 (n_383),
+       .ZN (n_381));
+  AOI22_X1 g12528(.A1 (n_384), .A2 (n_263), .B1 (n_265), .B2 (n_383),
+       .ZN (n_380));
+  AOI22_X1 g12529(.A1 (n_384), .A2 (n_273), .B1 (n_275), .B2 (n_383),
+       .ZN (n_379));
+  AOI22_X1 g12530(.A1 (n_384), .A2 (n_296), .B1 (n_298), .B2 (n_383),
+       .ZN (n_378));
+  AOI22_X1 g12531(.A1 (n_384), .A2 (n_306), .B1 (n_308), .B2 (n_383),
+       .ZN (n_377));
+  AOI22_X1 g12532(.A1 (n_384), .A2 (n_158), .B1 (n_383), .B2 (n_159),
+       .ZN (n_376));
+  AOI22_X1 g12533(.A1 (n_384), .A2 (n_176), .B1 (n_383), .B2 (n_169),
+       .ZN (n_375));
+  NAND2_X1 g12493(.A1 (n_373), .A2 (chequing_local[3]), .ZN (n_374));
+  NAND2_X1 g12494(.A1 (n_373), .A2 (chequing_local[4]), .ZN (n_372));
+  NAND2_X1 g12495(.A1 (n_370), .A2 (chequing_local[5]), .ZN (n_371));
+  NAND2_X1 g12496(.A1 (n_370), .A2 (chequing_local[7]), .ZN (n_369));
+  NAND2_X1 g12497(.A1 (n_370), .A2 (chequing_local[6]), .ZN (n_368));
+  NAND2_X1 g12498(.A1 (n_370), .A2 (chequing_local[8]), .ZN (n_367));
+  NAND2_X1 g12499(.A1 (n_370), .A2 (chequing_local[9]), .ZN (n_366));
+  NAND2_X1 g12500(.A1 (chequing_local[11]), .A2 (n_370), .ZN (n_365));
+  NAND2_X1 g12501(.A1 (chequing_local[12]), .A2 (n_370), .ZN (n_364));
+  NAND2_X1 g12502(.A1 (n_370), .A2 (chequing_local[1]), .ZN (n_363));
+  NAND2_X1 g12503(.A1 (n_370), .A2 (chequing_local[2]), .ZN (n_362));
+  NAND2_X1 g12504(.A1 (chequing_local[10]), .A2 (n_370), .ZN (n_361));
+  AOI21_X1 g12514(.A1 (n_358), .A2 (n_197), .B (n_207), .ZN (n_360));
+  AOI21_X1 g12515(.A1 (n_358), .A2 (n_213), .B (n_228), .ZN (n_359));
+  AOI22_X1 g12516(.A1 (n_354), .A2 (n_318), .B1 (n_323), .B2 (n_353),
+       .ZN (n_357));
+  OAI22_X1 g12517(.A1 (n_334), .A2 (n_320), .B1 (n_321), .B2 (n_182),
+       .ZN (n_356));
+  AOI22_X1 g12518(.A1 (n_354), .A2 (n_311), .B1 (n_312), .B2 (n_353),
+       .ZN (n_355));
+  AOI22_X1 g12519(.A1 (n_354), .A2 (n_164), .B1 (n_162), .B2 (n_353),
+       .ZN (n_352));
+  AOI22_X1 g12520(.A1 (n_354), .A2 (n_174), .B1 (n_172), .B2 (n_353),
+       .ZN (n_351));
+  AOI22_X1 g12521(.A1 (n_354), .A2 (n_211), .B1 (n_215), .B2 (n_353),
+       .ZN (n_350));
+  AOI22_X1 g12522(.A1 (n_354), .A2 (n_283), .B1 (n_285), .B2 (n_353),
+       .ZN (n_349));
+  AOI22_X1 g12523(.A1 (n_354), .A2 (n_300), .B1 (n_293), .B2 (n_353),
+       .ZN (n_348));
+  INV_X1 g12534(.I (n_391), .ZN (n_401));
+  NAND2_X1 g12536(.A1 (n_345), .A2 (n_194), .ZN (n_347));
+  NAND2_X1 g12537(.A1 (n_345), .A2 (n_220), .ZN (n_346));
+  NAND2_X1 g12538(.A1 (n_345), .A2 (n_238), .ZN (n_344));
+  NAND2_X1 g12539(.A1 (n_345), .A2 (n_252), .ZN (n_343));
+  NAND2_X1 g12540(.A1 (n_345), .A2 (n_260), .ZN (n_342));
+  NAND2_X1 g12541(.A1 (n_345), .A2 (n_277), .ZN (n_341));
+  INV_X1 g12543(.I (n_373), .ZN (n_340));
+  NAND2_X1 g12512(.A1 (n_337), .A2 (n_187), .ZN (n_339));
+  NAND2_X1 g12513(.A1 (n_337), .A2 (n_181), .ZN (n_338));
+  NOR2_X1 g12535(.A1 (n_345), .A2 (n_279), .ZN (n_391));
+  OAI22_X1 g12544(.A1 (state[0]), .A2 (n_336), .B1 (n_332), .B2
+       (n_335), .ZN (n_373));
+  AOI22_X1 g12545(.A1 (n_331), .A2 (n_333), .B1 (n_186), .B2 (n_166),
+       .ZN (n_406));
+  OAI22_X1 g12546(.A1 (n_336), .A2 (n_330), .B1 (n_216), .B2 (n_335),
+       .ZN (n_370));
+  INV_X1 g12548(.I (n_334), .ZN (n_384));
+  NAND4_X1 g12542(.A1 (n_143), .A2 (n_328), .A3 (n_326), .A4 (n_333),
+       .ZN (n_337));
+  AND2_X1 g12547(.A1 (n_332), .A2 (n_336), .Z (n_358));
+  NAND2_X1 g12549(.A1 (n_336), .A2 (n_333), .ZN (n_334));
+  NOR2_X1 g12550(.A1 (state[0]), .A2 (n_331), .ZN (n_345));
+  NOR2_X1 g12551(.A1 (n_331), .A2 (n_330), .ZN (n_354));
+  NOR3_X1 g12554(.A1 (n_329), .A2 (n_325), .A3 (account_selection), .ZN
+       (n_336));
+  OR3_X2 g12555(.A1 (n_329), .A2 (n_327), .A3 (n_324), .Z (n_331));
+  NAND2_X1 g12552(.A1 (n_327), .A2 (account_selection), .ZN (n_328));
+  NAND2_X1 g12553(.A1 (n_325), .A2 (n_324), .ZN (n_326));
+  XOR2_X1 g12558(.A1 (n_315), .A2 (n_316), .Z (n_323));
+  OAI22_X1 g12556(.A1 (n_319), .A2 (n_111), .B1 (chequing_local[13]),
+       .B2 (n_322), .ZN (n_325));
+  OAI22_X1 g12557(.A1 (n_317), .A2 (n_73), .B1 (savings_local[13]), .B2
+       (n_322), .ZN (n_327));
+  XNOR2_X1 g12559(.A1 (n_314), .A2 (n_144), .ZN (n_321));
+  NAND2_X1 g12560(.A1 (n_319), .A2 (n_145), .ZN (n_320));
+  AND2_X1 g12561(.A1 (n_317), .A2 (n_316), .Z (n_318));
+  OAI21_X1 g12563(.A1 (n_303), .A2 (n_125), .B (n_47), .ZN (n_315));
+  AOI22_X1 g12562(.A1 (n_307), .A2 (n_21), .B1 (chequing_local[12]),
+       .B2 (amount[12]), .ZN (n_314));
+  OAI21_X1 g12564(.A1 (n_305), .A2 (n_80), .B (n_135), .ZN (n_319));
+  OAI22_X1 g12565(.A1 (n_310), .A2 (n_36), .B1 (n_313), .B2
+       (amount[12]), .ZN (n_317));
+  XOR2_X1 g12566(.A1 (n_302), .A2 (n_309), .Z (n_312));
+  XOR2_X1 g12567(.A1 (n_310), .A2 (n_309), .Z (n_311));
+  XOR2_X1 g12568(.A1 (n_307), .A2 (n_304), .Z (n_308));
+  XOR2_X1 g12569(.A1 (n_305), .A2 (n_304), .Z (n_306));
+  INV_X1 g12570(.I (n_302), .ZN (n_303));
+  OAI21_X1 g12571(.A1 (n_292), .A2 (n_51), .B (n_126), .ZN (n_302));
+  OAI21_X1 g12572(.A1 (n_297), .A2 (n_57), .B (n_122), .ZN (n_307));
+  AOI22_X1 g12573(.A1 (n_295), .A2 (n_27), .B1 (chequing_local[11]),
+       .B2 (n_301), .ZN (n_305));
+  AOI22_X1 g12574(.A1 (n_299), .A2 (n_42), .B1 (savings_local[11]), .B2
+       (n_301), .ZN (n_310));
+  XOR2_X1 g12575(.A1 (n_299), .A2 (n_291), .Z (n_300));
+  XOR2_X1 g12576(.A1 (n_297), .A2 (n_294), .Z (n_298));
+  XOR2_X1 g12577(.A1 (n_295), .A2 (n_294), .Z (n_296));
+  XOR2_X1 g12578(.A1 (n_292), .A2 (n_291), .Z (n_293));
+  AOI22_X1 g12579(.A1 (n_289), .A2 (n_19), .B1 (chequing_local[10]),
+       .B2 (amount[10]), .ZN (n_297));
+  AOI22_X1 g12580(.A1 (n_284), .A2 (n_45), .B1 (savings_local[10]), .B2
+       (amount[10]), .ZN (n_292));
+  OAI21_X1 g12581(.A1 (n_287), .A2 (n_109), .B (n_137), .ZN (n_295));
+  OAI21_X1 g12582(.A1 (n_282), .A2 (n_90), .B (n_134), .ZN (n_299));
+  XOR2_X1 g12583(.A1 (n_289), .A2 (n_286), .Z (n_290));
+  XOR2_X1 g12584(.A1 (n_287), .A2 (n_286), .Z (n_288));
+  XOR2_X1 g12585(.A1 (n_284), .A2 (n_281), .Z (n_285));
+  XOR2_X1 g12586(.A1 (n_282), .A2 (n_281), .Z (n_283));
+  NAND2_X1 g12587(.A1 (n_270), .A2 (n_279), .ZN (n_280));
+  OAI21_X1 g12588(.A1 (n_274), .A2 (n_76), .B (n_123), .ZN (n_289));
+  OAI21_X1 g12589(.A1 (n_267), .A2 (n_121), .B (n_55), .ZN (n_284));
+  AOI22_X1 g12590(.A1 (n_272), .A2 (n_25), .B1 (chequing_local[9]), .B2
+       (n_278), .ZN (n_287));
+  AOI22_X1 g12591(.A1 (n_276), .A2 (n_35), .B1 (savings_local[9]), .B2
+       (n_278), .ZN (n_282));
+  XNOR2_X1 g12593(.A1 (n_276), .A2 (n_269), .ZN (n_277));
+  XOR2_X1 g12594(.A1 (n_274), .A2 (n_271), .Z (n_275));
+  XOR2_X1 g12595(.A1 (n_272), .A2 (n_271), .Z (n_273));
+  XOR2_X1 g12592(.A1 (n_266), .A2 (n_269), .Z (n_270));
+  NAND2_X1 g12596(.A1 (n_258), .A2 (n_279), .ZN (n_268));
+  INV_X1 g12597(.I (n_266), .ZN (n_267));
+  OAI21_X1 g12599(.A1 (n_262), .A2 (n_99), .B (n_141), .ZN (n_272));
+  AOI22_X1 g12600(.A1 (n_264), .A2 (n_17), .B1 (chequing_local[8]), .B2
+       (amount[8]), .ZN (n_274));
+  OAI22_X1 g12601(.A1 (n_259), .A2 (n_37), .B1 (n_11), .B2 (amount[8]),
        .ZN (n_276));
-  OAI22_X1 g92410(.A1 (n_68), .A2 (bank_card_insert), .B1 (n_131), .B2
-       (deposit_withdrawal_selection), .ZN (n_171));
-  AOI21_X1 g92411(.A1 (n_75), .A2 (n_65), .B (n_63), .ZN (n_281));
-  NOR2_X1 g92424(.A1 (n_44), .A2 (n_119), .ZN (n_239));
-  INV_X1 g92431(.I (n_466), .ZN (n_170));
-  INV_X1 g92434(.I (n_264), .ZN (n_266));
-  NAND2_X1 g92441(.A1 (n_169), .A2 (state[3]), .ZN (n_237));
-  NOR2_X1 g92446(.A1 (n_167), .A2 (n_99), .ZN (n_168));
-  OR2_X1 g92449(.A1 (n_167), .A2 (n_166), .Z (n_340));
-  AND2_X1 g92450(.A1 (n_165), .A2 (n_217), .Z (n_480));
-  NOR2_X1 g92451(.A1 (n_175), .A2 (n_96), .ZN (n_361));
-  NOR2_X1 g92452(.A1 (n_215), .A2 (n_265), .ZN (n_491));
-  NOR2_X1 g92455(.A1 (n_164), .A2 (n_98), .ZN (n_269));
-  NOR2_X1 g92456(.A1 (n_177), .A2 (n_110), .ZN (n_436));
-  AND2_X1 g92457(.A1 (n_163), .A2 (n_208), .Z (n_404));
-  NOR2_X1 g92458(.A1 (n_191), .A2 (n_162), .ZN (n_485));
-  INV_X1 g92465(.I (n_160), .ZN (n_161));
-  OAI21_X1 g92469(.A1 (n_159), .A2 (amount[11]), .B (n_70), .ZN
-       (n_199));
-  INV_X1 g92414(.I (n_494), .ZN (n_158));
-  OAI21_X1 g92381(.A1 (n_153), .A2 (n_19), .B (n_141), .ZN (n_228));
-  OAI22_X1 g92383(.A1 (n_231), .A2 (n_13), .B1 (state[3]), .B2
-       (state[1]), .ZN (n_152));
-  AOI21_X1 g92466(.A1 (n_151), .A2 (amount[9]), .B (n_201), .ZN
-       (n_160));
-  NAND2_X1 g92498(.A1 (n_16), .A2 (n_67), .ZN (n_238));
-  NOR2_X1 g92348(.A1 (n_108), .A2 (n_230), .ZN (n_150));
-  NOR2_X1 g92618(.A1 (n_15), .A2 (amount[8]), .ZN (n_196));
-  OAI21_X1 g92361(.A1 (chequing_local[13]), .A2 (n_149), .B (n_90), .ZN
-       (n_260));
-  AOI21_X1 g92362(.A1 (savings_local[13]), .A2 (n_149), .B (n_113), .ZN
-       (n_229));
-  NAND2_X1 g92445(.A1 (n_126), .A2 (n_69), .ZN (n_148));
-  AOI21_X1 g92372(.A1 (n_147), .A2 (n_14), .B (n_93), .ZN (n_189));
-  OAI21_X1 g92379(.A1 (n_91), .A2 (n_145), .B (n_133), .ZN (n_146));
-  INV_X1 g92413(.I (n_252), .ZN (n_253));
-  NAND2_X1 g92416(.A1 (n_59), .A2 (n_145), .ZN (n_414));
-  INV_X1 g92417(.I (n_143), .ZN (n_144));
-  INV_X1 g92419(.I (n_333), .ZN (n_142));
-  NAND2_X1 g92421(.A1 (n_20), .A2 (n_141), .ZN (n_240));
-  AND2_X1 g92423(.A1 (n_140), .A2 (n_285), .Z (n_255));
-  NAND2_X1 g92425(.A1 (n_27), .A2 (n_139), .ZN (n_277));
-  OR2_X1 g92426(.A1 (n_138), .A2 (n_137), .Z (n_365));
-  INV_X1 g92606(.I (n_215), .ZN (n_235));
-  NAND2_X1 g92427(.A1 (n_47), .A2 (n_136), .ZN (n_401));
-  NAND2_X1 g92428(.A1 (n_135), .A2 (n_30), .ZN (n_438));
-  NAND2_X1 g92429(.A1 (n_18), .A2 (n_194), .ZN (n_477));
-  NAND2_X1 g92430(.A1 (n_45), .A2 (n_134), .ZN (n_488));
-  NOR2_X1 g92432(.A1 (n_40), .A2 (n_213), .ZN (n_466));
-  NAND2_X1 g92433(.A1 (n_46), .A2 (n_133), .ZN (n_452));
-  NAND2_X1 g92435(.A1 (n_32), .A2 (n_132), .ZN (n_264));
-  NOR2_X1 g92436(.A1 (n_23), .A2 (n_74), .ZN (n_474));
-  NOR2_X1 g92439(.A1 (n_131), .A2 (state[3]), .ZN (n_222));
-  NAND2_X1 g92443(.A1 (n_163), .A2 (n_129), .ZN (n_130));
-  NOR2_X1 g92444(.A1 (n_128), .A2 (n_94), .ZN (n_233));
-  NOR2_X1 g92447(.A1 (n_172), .A2 (state[0]), .ZN (n_243));
-  NOR2_X1 g92448(.A1 (n_162), .A2 (n_234), .ZN (n_127));
-  AND2_X1 g92454(.A1 (n_126), .A2 (n_207), .Z (n_388));
-  AOI21_X1 g92461(.A1 (state[3]), .A2 (state[2]), .B (n_202), .ZN
+  XOR2_X1 g12603(.A1 (n_264), .A2 (n_261), .Z (n_265));
+  XOR2_X1 g12604(.A1 (n_262), .A2 (n_261), .Z (n_263));
+  XNOR2_X1 g12605(.A1 (n_259), .A2 (n_256), .ZN (n_260));
+  OAI21_X1 g12598(.A1 (n_257), .A2 (n_63), .B (n_120), .ZN (n_266));
+  XOR2_X1 g12602(.A1 (n_257), .A2 (n_256), .Z (n_258));
+  NAND2_X1 g12606(.A1 (n_248), .A2 (n_279), .ZN (n_255));
+  NAND2_X1 g12607(.A1 (n_244), .A2 (n_24), .ZN (n_264));
+  AOI21_X1 g12608(.A1 (n_253), .A2 (n_112), .B (n_89), .ZN (n_262));
+  AOI22_X1 g12610(.A1 (n_251), .A2 (n_29), .B1 (savings_local[7]), .B2
+       (n_68), .ZN (n_259));
+  XNOR2_X1 g12613(.A1 (n_253), .A2 (n_249), .ZN (n_254));
+  XNOR2_X1 g12614(.A1 (n_251), .A2 (n_246), .ZN (n_252));
+  AOI21_X1 g12609(.A1 (n_247), .A2 (n_50), .B (n_118), .ZN (n_257));
+  XOR2_X1 g12611(.A1 (n_243), .A2 (n_249), .Z (n_250));
+  XOR2_X1 g12612(.A1 (n_247), .A2 (n_246), .Z (n_248));
+  NAND2_X1 g12616(.A1 (n_240), .A2 (n_279), .ZN (n_245));
+  OAI21_X1 g12615(.A1 (chequing_local[7]), .A2 (amount[7]), .B (n_243),
+       .ZN (n_244));
+  OAI21_X1 g12619(.A1 (n_10), .A2 (amount[6]), .B (n_233), .ZN (n_253));
+  OAI21_X1 g12620(.A1 (n_12), .A2 (amount[6]), .B (n_231), .ZN (n_251));
+  OAI21_X1 g12618(.A1 (n_239), .A2 (n_74), .B (n_114), .ZN (n_247));
+  OAI21_X1 g12617(.A1 (n_241), .A2 (n_78), .B (n_116), .ZN (n_243));
+  XOR2_X1 g12621(.A1 (n_241), .A2 (n_235), .Z (n_242));
+  XOR2_X1 g12622(.A1 (n_239), .A2 (n_237), .Z (n_240));
+  XOR2_X1 g12623(.A1 (n_229), .A2 (n_237), .Z (n_238));
+  XOR2_X1 g12624(.A1 (n_232), .A2 (n_235), .Z (n_236));
+  NAND2_X1 g12625(.A1 (n_222), .A2 (n_279), .ZN (n_234));
+  OAI21_X1 g12626(.A1 (chequing_local[6]), .A2 (n_230), .B (n_232), .ZN
+       (n_233));
+  OAI21_X1 g12627(.A1 (savings_local[6]), .A2 (n_230), .B (n_229), .ZN
+       (n_231));
+  DFFSNQ_X1 \state_reg[1] (.SN (1'b1), .CLK (clk), .D (n_217), .Q
+       (state[1]));
+  AOI22_X1 g12628(.A1 (n_226), .A2 (n_18), .B1 (chequing_local[5]), .B2
+       (amount[5]), .ZN (n_241));
+  AOI22_X1 g12629(.A1 (n_221), .A2 (n_15), .B1 (savings_local[5]), .B2
+       (amount[5]), .ZN (n_239));
+  OAI21_X1 g12630(.A1 (n_224), .A2 (n_84), .B (n_142), .ZN (n_232));
+  OAI21_X1 g12631(.A1 (n_219), .A2 (n_86), .B (n_133), .ZN (n_229));
+  OAI21_X1 g12632(.A1 (n_214), .A2 (n_206), .B (n_425), .ZN (n_228));
+  XOR2_X1 g12633(.A1 (n_226), .A2 (n_223), .Z (n_227));
+  XOR2_X1 g12634(.A1 (n_224), .A2 (n_223), .Z (n_225));
+  XOR2_X1 g12635(.A1 (n_221), .A2 (n_218), .Z (n_222));
+  XOR2_X1 g12636(.A1 (n_219), .A2 (n_218), .Z (n_220));
+  OAI22_X1 g12643(.A1 (n_200), .A2 (n_216), .B1 (n_148), .B2 (n_330),
+       .ZN (n_217));
+  XOR2_X1 g12644(.A1 (n_205), .A2 (n_210), .Z (n_215));
+  XOR2_X1 g12645(.A1 (n_209), .A2 (n_212), .Z (n_214));
+  XNOR2_X1 g12646(.A1 (n_203), .A2 (n_212), .ZN (n_213));
+  XOR2_X1 g12647(.A1 (n_208), .A2 (n_210), .Z (n_211));
+  OAI21_X1 g12638(.A1 (n_209), .A2 (n_119), .B (n_70), .ZN (n_226));
+  AOI21_X1 g12639(.A1 (n_208), .A2 (n_107), .B (n_138), .ZN (n_219));
+  OAI21_X1 g12640(.A1 (n_199), .A2 (n_206), .B (n_425), .ZN (n_207));
+  OAI22_X1 g12641(.A1 (n_205), .A2 (n_20), .B1 (n_204), .B2 (n_202),
+       .ZN (n_221));
+  AOI22_X1 g12642(.A1 (n_203), .A2 (n_34), .B1 (chequing_local[4]), .B2
+       (n_202), .ZN (n_224));
+  NAND2_X1 g12648(.A1 (n_192), .A2 (n_279), .ZN (n_201));
+  DFFSNQ_X1 \state_reg[2] (.SN (1'b1), .CLK (clk), .D (n_189), .Q
+       (state[2]));
+  AOI21_X1 g12650(.A1 (n_188), .A2 (n_185), .B (n_154), .ZN (n_200));
+  AOI22_X1 g12651(.A1 (n_191), .A2 (n_22), .B1 (savings_local[3]), .B2
+       (amount[3]), .ZN (n_205));
+  OAI21_X1 g12652(.A1 (n_193), .A2 (n_94), .B (n_139), .ZN (n_208));
+  OAI21_X1 g12653(.A1 (n_196), .A2 (n_82), .B (n_136), .ZN (n_203));
+  AOI22_X1 g12654(.A1 (n_198), .A2 (n_23), .B1 (chequing_local[3]), .B2
+       (amount[3]), .ZN (n_209));
+  XNOR2_X1 g12655(.A1 (n_198), .A2 (n_195), .ZN (n_199));
+  XOR2_X1 g12656(.A1 (n_196), .A2 (n_195), .Z (n_197));
+  XOR2_X1 g12657(.A1 (n_193), .A2 (n_190), .Z (n_194));
+  XOR2_X1 g12658(.A1 (n_191), .A2 (n_190), .Z (n_192));
+  OAI22_X1 g12660(.A1 (n_165), .A2 (rst), .B1 (n_188), .B2 (n_216), .ZN
+       (n_189));
+  DFFSNQ_X1 open_atm_receive_reg(.SN (1'b1), .CLK (clk), .D (n_184), .Q
+       (open_atm_receive));
+  DFFSNQ_X1 \state_reg[3] (.SN (1'b1), .CLK (clk), .D (n_183), .Q
+       (state[3]));
+  AOI22_X1 g12661(.A1 (n_177), .A2 (n_160), .B1 (n_103), .B2 (n_186),
+       .ZN (n_187));
+  OAI21_X1 g12665(.A1 (n_149), .A2 (n_147), .B (n_150), .ZN (n_185));
+  INV_X1 g12669(.I (n_179), .ZN (n_184));
+  OAI21_X1 g12675(.A1 (n_113), .A2 (n_216), .B (n_155), .ZN (n_183));
+  INV_X1 g12680(.I (n_182), .ZN (n_383));
+  OAI21_X1 g12663(.A1 (n_178), .A2 (n_16), .B (open_atm_dispense), .ZN
+       (n_181));
+  OAI21_X1 g12664(.A1 (n_170), .A2 (n_61), .B (n_124), .ZN (n_191));
+  OAI21_X1 g12666(.A1 (n_167), .A2 (n_53), .B (n_115), .ZN (n_198));
+  AOI22_X1 g12667(.A1 (n_173), .A2 (n_33), .B1 (savings_local[2]), .B2
+       (n_180), .ZN (n_193));
+  AOI22_X1 g12668(.A1 (n_175), .A2 (n_30), .B1 (chequing_local[2]), .B2
+       (n_180), .ZN (n_196));
+  AOI22_X1 g12670(.A1 (open_atm_receive), .A2 (n_178), .B1 (n_146), .B2
+       (n_177), .ZN (n_179));
+  XOR2_X1 g12671(.A1 (n_168), .A2 (n_175), .Z (n_176));
+  XOR2_X1 g12672(.A1 (n_171), .A2 (n_173), .Z (n_174));
+  XOR2_X1 g12673(.A1 (n_171), .A2 (n_170), .Z (n_172));
+  XOR2_X1 g12674(.A1 (n_168), .A2 (n_167), .Z (n_169));
+  NOR2_X1 g12676(.A1 (n_332), .A2 (n_166), .ZN (n_279));
+  NOR2_X1 g12677(.A1 (n_216), .A2 (n_166), .ZN (n_353));
+  NAND2_X1 g12678(.A1 (state[0]), .A2 (n_335), .ZN (n_206));
+  AOI21_X1 g12679(.A1 (n_153), .A2 (n_7), .B (n_152), .ZN (n_165));
+  NAND2_X1 g12681(.A1 (n_186), .A2 (n_335), .ZN (n_182));
+  XOR2_X1 g12683(.A1 (n_161), .A2 (n_163), .Z (n_164));
+  XNOR2_X1 g12684(.A1 (n_161), .A2 (n_104), .ZN (n_162));
+  NAND3_X1 g12682(.A1 (n_151), .A2 (n_101), .A3 (n_128), .ZN (n_160));
+  XOR2_X1 g12685(.A1 (n_157), .A2 (n_129), .Z (n_159));
+  XNOR2_X1 g12686(.A1 (n_157), .A2 (n_156), .ZN (n_158));
+  AOI21_X1 g12694(.A1 (n_154), .A2 (n_333), .B (n_132), .ZN (n_155));
+  NAND2_X1 g12687(.A1 (n_153), .A2 (account_selection), .ZN (n_166));
+  AND2_X1 g12688(.A1 (n_153), .A2 (n_324), .Z (n_335));
+  OAI22_X1 g12692(.A1 (n_151), .A2 (n_43), .B1 (n_150), .B2 (n_102),
+       .ZN (n_152));
+  NAND4_X1 g12695(.A1 (n_97), .A2 (n_14), .A3 (pin[7]), .A4 (pin[6]),
+       .ZN (n_149));
+  AOI21_X1 g12698(.A1 (n_151), .A2 (state[3]), .B (n_127), .ZN (n_148));
+  INV_X1 g12689(.I (n_130), .ZN (n_167));
+  OAI21_X1 g12691(.A1 (n_163), .A2 (n_92), .B (n_140), .ZN (n_173));
+  NAND3_X1 g12693(.A1 (n_96), .A2 (n_4), .A3 (pin[1]), .ZN (n_147));
+  OAI21_X1 g12696(.A1 (n_146), .A2 (rst), .B (n_216), .ZN (n_178));
+  AOI21_X1 g12699(.A1 (savings_local[1]), .A2 (amount[1]), .B (n_106),
+       .ZN (n_170));
+  OAI22_X1 g12700(.A1 (n_156), .A2 (n_38), .B1 (n_8), .B2 (amount[1]),
+       .ZN (n_175));
+  INV_X1 g12701(.I (n_144), .ZN (n_145));
+  INV_X1 g12720(.I (n_329), .ZN (n_143));
+  NAND2_X1 g12722(.A1 (n_142), .A2 (n_85), .ZN (n_223));
+  NAND2_X1 g12723(.A1 (n_141), .A2 (n_100), .ZN (n_261));
+  NAND2_X1 g12724(.A1 (n_140), .A2 (n_93), .ZN (n_161));
+  NAND2_X1 g12725(.A1 (n_139), .A2 (n_95), .ZN (n_190));
+  NOR2_X1 g12727(.A1 (n_108), .A2 (n_138), .ZN (n_210));
+  NAND2_X1 g12728(.A1 (n_137), .A2 (n_110), .ZN (n_286));
+  NAND2_X1 g12729(.A1 (n_136), .A2 (n_83), .ZN (n_195));
+  NAND2_X1 g12730(.A1 (n_135), .A2 (n_81), .ZN (n_304));
+  NAND2_X1 g12731(.A1 (n_134), .A2 (n_91), .ZN (n_281));
+  NAND2_X1 g12732(.A1 (n_133), .A2 (n_87), .ZN (n_218));
+  NOR3_X1 g12735(.A1 (n_150), .A2 (n_66), .A3 (rst), .ZN (n_132));
+  AND3_X1 g12697(.A1 (n_332), .A2 (n_150), .A3 (n_188), .Z (ready));
+  OAI21_X1 g12690(.A1 (n_59), .A2 (n_129), .B (n_117), .ZN (n_130));
+  NAND2_X1 g12703(.A1 (n_127), .A2 (deposit_withdrawal_selection), .ZN
+       (n_128));
+  NAND2_X1 g12704(.A1 (n_52), .A2 (n_126), .ZN (n_291));
+  NOR2_X1 g12705(.A1 (n_48), .A2 (n_125), .ZN (n_309));
+  NAND2_X1 g12706(.A1 (n_62), .A2 (n_124), .ZN (n_171));
+  NAND2_X1 g12707(.A1 (n_77), .A2 (n_123), .ZN (n_271));
+  NAND2_X1 g12708(.A1 (n_58), .A2 (n_122), .ZN (n_294));
+  NOR2_X1 g12709(.A1 (n_56), .A2 (n_121), .ZN (n_269));
+  NAND2_X1 g12710(.A1 (n_64), .A2 (n_120), .ZN (n_256));
+  NOR2_X1 g12711(.A1 (n_71), .A2 (n_119), .ZN (n_212));
+  NOR2_X1 g12712(.A1 (n_118), .A2 (n_49), .ZN (n_246));
+  NAND2_X1 g12713(.A1 (n_60), .A2 (n_117), .ZN (n_157));
+  NAND2_X1 g12714(.A1 (n_79), .A2 (n_116), .ZN (n_235));
+  NAND2_X1 g12715(.A1 (n_54), .A2 (n_115), .ZN (n_168));
+  NAND2_X1 g12716(.A1 (n_75), .A2 (n_114), .ZN (n_237));
+  AND2_X1 g12717(.A1 (n_127), .A2 (n_150), .Z (n_153));
+  NOR2_X1 g12718(.A1 (n_146), .A2 (state[3]), .ZN (n_113));
+  NOR2_X1 g12719(.A1 (state[3]), .A2 (n_330), .ZN (n_177));
+  NAND2_X1 g12721(.A1 (n_127), .A2 (state[3]), .ZN (n_329));
+  NAND2_X1 g12726(.A1 (n_88), .A2 (n_112), .ZN (n_249));
+  HA_X1 g12702(.A (n_322), .B (chequing_local[13]), .CO (n_111), .S
+       (n_144));
+  INV_X1 g12820(.I (n_109), .ZN (n_110));
+  INV_X1 g12847(.I (n_107), .ZN (n_108));
+  AOI21_X1 g12733(.A1 (n_105), .A2 (n_46), .B (n_104), .ZN (n_106));
+  OAI21_X1 g12734(.A1 (n_150), .A2 (n_65), .B (n_102), .ZN (n_103));
+  AOI22_X1 g12736(.A1 (n_40), .A2 (bank_card_insert), .B1 (state[2]),
+       .B2 (account_selection), .ZN (n_101));
+  INV_X1 g12816(.I (n_99), .ZN (n_100));
+  AOI22_X1 g12737(.A1 (n_98), .A2 (n_322), .B1 (savings_local[13]), .B2
+       (amount[13]), .ZN (n_316));
+  NOR4_X1 g12738(.A1 (n_0), .A2 (pin[5]), .A3 (pin[3]), .A4 (pin[2]),
+       .ZN (n_97));
+  NOR4_X1 g12739(.A1 (n_1), .A2 (pin[11]), .A3 (pin[13]), .A4
+       (pin[12]), .ZN (n_96));
+  INV_X1 g12840(.I (n_94), .ZN (n_95));
+  INV_X1 g12802(.I (n_146), .ZN (n_151));
+  INV_X1 g12811(.I (n_92), .ZN (n_93));
+  INV_X1 g12813(.I (n_90), .ZN (n_91));
+  INV_X1 g12818(.I (n_88), .ZN (n_89));
+  INV_X1 g12824(.I (n_86), .ZN (n_87));
+  INV_X1 g12833(.I (n_84), .ZN (n_85));
+  INV_X1 g12843(.I (n_82), .ZN (n_83));
+  INV_X1 g12850(.I (n_216), .ZN (n_186));
+  INV_X1 g12804(.I (n_80), .ZN (n_81));
+  INV_X1 g12799(.I (n_330), .ZN (n_333));
+  NAND2_X1 g12851(.A1 (state[0]), .A2 (n_425), .ZN (n_216));
+  NOR2_X1 g12825(.A1 (savings_local[5]), .A2 (n_72), .ZN (n_86));
+  NOR2_X1 g12821(.A1 (chequing_local[10]), .A2 (n_69), .ZN (n_109));
+  INV_X1 g12781(.I (n_78), .ZN (n_79));
+  INV_X1 g12794(.I (n_76), .ZN (n_77));
+  INV_X1 g12761(.I (n_74), .ZN (n_75));
+  NOR2_X1 g12829(.A1 (n_98), .A2 (amount[13]), .ZN (n_73));
+  NAND2_X1 g12842(.A1 (chequing_local[8]), .A2 (n_39), .ZN (n_141));
+  NOR2_X1 g12834(.A1 (chequing_local[5]), .A2 (n_72), .ZN (n_84));
+  INV_X1 g12789(.I (n_70), .ZN (n_71));
+  NAND2_X1 g12810(.A1 (chequing_local[10]), .A2 (n_69), .ZN (n_137));
+  NOR2_X1 g12774(.A1 (n_28), .A2 (n_68), .ZN (n_118));
+  NOR2_X1 g12740(.A1 (chequing_local[0]), .A2 (n_67), .ZN (n_156));
+  NOR2_X1 g12741(.A1 (n_65), .A2 (bank_card_insert), .ZN (n_66));
+  NOR2_X1 g12742(.A1 (savings_local[0]), .A2 (n_67), .ZN (n_163));
+  INV_X1 g12746(.I (n_63), .ZN (n_64));
+  INV_X1 g12751(.I (n_61), .ZN (n_62));
+  INV_X1 g12753(.I (n_59), .ZN (n_60));
+  INV_X1 g12757(.I (n_57), .ZN (n_58));
+  NOR2_X1 g12844(.A1 (chequing_local[3]), .A2 (n_31), .ZN (n_82));
+  INV_X1 g12763(.I (n_55), .ZN (n_56));
+  INV_X1 g12766(.I (n_53), .ZN (n_54));
+  INV_X1 g12769(.I (n_51), .ZN (n_52));
+  INV_X1 g12771(.I (n_49), .ZN (n_50));
+  NAND2_X1 g12819(.A1 (chequing_local[7]), .A2 (n_68), .ZN (n_88));
+  INV_X1 g12779(.I (n_47), .ZN (n_48));
+  NOR2_X1 g12812(.A1 (savings_local[1]), .A2 (n_46), .ZN (n_92));
+  NAND2_X1 g12788(.A1 (n_44), .A2 (n_69), .ZN (n_45));
+  INV_X1 g12792(.I (n_102), .ZN (n_154));
+  NAND2_X1 g12848(.A1 (n_204), .A2 (amount[4]), .ZN (n_107));
+  NOR2_X1 g12743(.A1 (n_150), .A2 (bank_card_insert), .ZN (n_43));
+  NAND2_X1 g12801(.A1 (n_41), .A2 (amount[11]), .ZN (n_42));
+  NOR2_X1 g12803(.A1 (n_65), .A2 (state[1]), .ZN (n_146));
+  NOR2_X1 g12806(.A1 (n_40), .A2 (state[2]), .ZN (n_127));
+  NAND2_X1 g12809(.A1 (savings_local[1]), .A2 (n_46), .ZN (n_140));
+  NOR2_X1 g12814(.A1 (savings_local[10]), .A2 (n_69), .ZN (n_90));
+  NOR2_X1 g12815(.A1 (n_204), .A2 (amount[4]), .ZN (n_138));
+  NOR2_X1 g12817(.A1 (chequing_local[8]), .A2 (n_39), .ZN (n_99));
+  NAND2_X1 g12822(.A1 (n_5), .A2 (amount[7]), .ZN (n_112));
+  NOR2_X1 g12823(.A1 (chequing_local[1]), .A2 (n_46), .ZN (n_38));
+  NOR2_X1 g12827(.A1 (savings_local[8]), .A2 (n_39), .ZN (n_37));
+  NOR2_X1 g12830(.A1 (savings_local[12]), .A2 (n_26), .ZN (n_36));
+  NAND2_X1 g12832(.A1 (n_2), .A2 (amount[9]), .ZN (n_35));
+  NAND2_X1 g12836(.A1 (n_3), .A2 (amount[4]), .ZN (n_34));
+  NAND2_X1 g12837(.A1 (n_32), .A2 (amount[2]), .ZN (n_33));
+  NAND2_X1 g12838(.A1 (chequing_local[5]), .A2 (n_72), .ZN (n_142));
+  NAND2_X1 g12839(.A1 (savings_local[5]), .A2 (n_72), .ZN (n_133));
+  NOR2_X1 g12841(.A1 (savings_local[3]), .A2 (n_31), .ZN (n_94));
+  NAND2_X1 g12846(.A1 (n_9), .A2 (amount[2]), .ZN (n_30));
+  NAND2_X1 g12835(.A1 (savings_local[10]), .A2 (n_69), .ZN (n_134));
+  NAND2_X1 g12808(.A1 (n_28), .A2 (amount[7]), .ZN (n_29));
+  NAND2_X1 g12845(.A1 (savings_local[3]), .A2 (n_31), .ZN (n_139));
+  NAND2_X1 g12807(.A1 (chequing_local[3]), .A2 (n_31), .ZN (n_136));
+  NAND2_X1 g12826(.A1 (n_13), .A2 (amount[11]), .ZN (n_27));
+  NAND2_X1 g12831(.A1 (chequing_local[12]), .A2 (n_26), .ZN (n_135));
+  NOR2_X1 g12805(.A1 (chequing_local[12]), .A2 (n_26), .ZN (n_80));
+  NAND2_X1 g12800(.A1 (n_332), .A2 (n_425), .ZN (n_330));
+  NAND2_X1 g12828(.A1 (n_6), .A2 (amount[9]), .ZN (n_25));
+  NAND2_X1 g12783(.A1 (chequing_local[11]), .A2 (amount[11]), .ZN
+       (n_122));
+  NAND2_X1 g12778(.A1 (chequing_local[7]), .A2 (amount[7]), .ZN (n_24));
+  NOR2_X1 g12782(.A1 (chequing_local[6]), .A2 (amount[6]), .ZN (n_78));
+  NAND2_X1 g12797(.A1 (savings_local[8]), .A2 (amount[8]), .ZN (n_120));
+  NAND2_X1 g12793(.A1 (state[1]), .A2 (state[2]), .ZN (n_102));
+  OR2_X1 g12765(.A1 (chequing_local[3]), .A2 (amount[3]), .Z (n_23));
+  OR2_X1 g12755(.A1 (savings_local[3]), .A2 (amount[3]), .Z (n_22));
+  NOR2_X1 g12747(.A1 (savings_local[8]), .A2 (amount[8]), .ZN (n_63));
+  OR2_X1 g12791(.A1 (chequing_local[12]), .A2 (amount[12]), .Z (n_21));
+  NAND2_X1 g12780(.A1 (savings_local[12]), .A2 (amount[12]), .ZN
+       (n_47));
+  NOR2_X1 g12762(.A1 (savings_local[6]), .A2 (amount[6]), .ZN (n_74));
+  NOR2_X1 g12796(.A1 (savings_local[4]), .A2 (amount[4]), .ZN (n_20));
+  NAND2_X1 g12785(.A1 (chequing_local[9]), .A2 (amount[9]), .ZN
+       (n_123));
+  OR2_X1 g12784(.A1 (chequing_local[10]), .A2 (amount[10]), .Z (n_19));
+  NAND2_X1 g12773(.A1 (savings_local[2]), .A2 (amount[2]), .ZN (n_124));
+  NAND2_X1 g12790(.A1 (chequing_local[4]), .A2 (amount[4]), .ZN (n_70));
+  NAND2_X1 g12745(.A1 (chequing_local[2]), .A2 (amount[2]), .ZN
+       (n_115));
+  OR2_X1 g12748(.A1 (chequing_local[5]), .A2 (amount[5]), .Z (n_18));
+  NOR2_X1 g12750(.A1 (savings_local[12]), .A2 (amount[12]), .ZN
        (n_125));
-  AOI21_X1 g92467(.A1 (n_8), .A2 (amount[9]), .B (n_105), .ZN (n_218));
-  AOI21_X1 g92470(.A1 (savings_local[11]), .A2 (n_10), .B (n_115), .ZN
-       (n_350));
-  OAI21_X1 g92471(.A1 (n_123), .A2 (amount[7]), .B (n_122), .ZN
-       (n_124));
-  NOR2_X1 g92442(.A1 (n_175), .A2 (n_100), .ZN (n_121));
-  INV_X1 g92503(.I (n_119), .ZN (n_120));
-  INV_X1 g92548(.I (n_181), .ZN (n_219));
-  INV_X1 g92554(.I (n_206), .ZN (n_118));
-  INV_X1 g92560(.I (n_116), .ZN (n_117));
-  INV_X1 g92562(.I (n_115), .ZN (n_165));
-  INV_X1 g92565(.I (n_113), .ZN (n_114));
-  INV_X1 g92567(.I (n_111), .ZN (n_112));
-  INV_X1 g92584(.I (n_109), .ZN (n_110));
-  INV_X1 g92415(.I (n_108), .ZN (n_375));
-  INV_X1 g92604(.I (n_107), .ZN (n_208));
-  INV_X1 g92614(.I (n_105), .ZN (n_106));
-  INV_X1 g92620(.I (n_392), .ZN (n_274));
-  INV_X1 g92610(.I (n_131), .ZN (n_169));
-  INV_X1 g92608(.I (n_172), .ZN (n_103));
-  INV_X1 g92581(.I (n_100), .ZN (n_101));
-  NOR2_X1 g92504(.A1 (chequing_local[8]), .A2 (amount[8]), .ZN (n_119));
-  INV_X1 g92590(.I (n_207), .ZN (n_99));
-  INV_X1 g92588(.I (n_97), .ZN (n_98));
-  INV_X1 g92586(.I (n_174), .ZN (n_96));
-  INV_X1 g92602(.I (n_94), .ZN (n_95));
-  NOR2_X1 g92420(.A1 (n_93), .A2 (n_92), .ZN (n_333));
-  NOR2_X1 g92422(.A1 (n_91), .A2 (n_223), .ZN (n_325));
-  INV_X1 g92558(.I (n_90), .ZN (n_191));
-  AND2_X1 g92437(.A1 (n_145), .A2 (n_602), .Z (n_224));
-  NOR2_X1 g92438(.A1 (n_21), .A2 (n_137), .ZN (n_89));
-  AOI21_X1 g92460(.A1 (n_87), .A2 (n_55), .B (n_86), .ZN (n_88));
-  NOR3_X1 g92462(.A1 (state[0]), .A2 (n_49), .A3 (bank_card_insert),
-       .ZN (n_85));
-  OAI21_X1 g92463(.A1 (chequing_local[8]), .A2 (n_82), .B (n_81), .ZN
-       (n_84));
-  OAI21_X1 g92464(.A1 (savings_local[8]), .A2 (n_82), .B (n_81), .ZN
-       (n_83));
-  AOI22_X1 g92472(.A1 (n_80), .A2 (n_149), .B1 (savings_local[13]), .B2
-       (amount[13]), .ZN (n_494));
-  NOR4_X1 g92473(.A1 (n_2), .A2 (pin[11]), .A3 (pin[13]), .A4
-       (pin[12]), .ZN (n_79));
-  NOR4_X1 g92474(.A1 (n_0), .A2 (pin[5]), .A3 (pin[3]), .A4 (pin[2]),
-       .ZN (n_78));
-  OAI22_X1 g92475(.A1 (chequing_local[13]), .A2 (amount[13]), .B1
-       (n_77), .B2 (n_149), .ZN (n_252));
-  INV_X1 g92575(.I (n_162), .ZN (n_193));
-  NOR2_X1 g92418(.A1 (n_74), .A2 (n_73), .ZN (n_143));
-  INV_X1 g92511(.I (n_310), .ZN (n_72));
-  INV_X1 g92513(.I (n_185), .ZN (n_71));
-  NAND2_X1 g92440(.A1 (n_231), .A2 (n_519), .ZN (n_187));
-  INV_X1 g92577(.I (n_265), .ZN (n_70));
-  INV_X1 g92600(.I (n_69), .ZN (n_166));
-  INV_X1 g92536(.I (n_68), .ZN (n_327));
-  NOR2_X1 g92607(.A1 (chequing_local[10]), .A2 (n_67), .ZN (n_215));
-  NAND2_X1 g92549(.A1 (n_82), .A2 (n_66), .ZN (n_181));
-  INV_X1 g92550(.I (n_81), .ZN (n_182));
-  NAND2_X1 g92552(.A1 (n_64), .A2 (amount[1]), .ZN (n_65));
-  NOR2_X1 g92556(.A1 (n_64), .A2 (amount[1]), .ZN (n_63));
-  NOR2_X1 g92557(.A1 (chequing_local[2]), .A2 (n_57), .ZN (n_245));
-  NOR2_X1 g92563(.A1 (n_62), .A2 (amount[10]), .ZN (n_115));
-  NAND2_X1 g92564(.A1 (savings_local[5]), .A2 (n_61), .ZN (n_126));
-  NOR2_X1 g92566(.A1 (n_60), .A2 (amount[12]), .ZN (n_113));
-  NOR2_X1 g92569(.A1 (savings_local[12]), .A2 (n_5), .ZN (n_230));
-  NAND2_X1 g92570(.A1 (n_62), .A2 (amount[10]), .ZN (n_217));
-  INV_X1 g92534(.I (n_223), .ZN (n_59));
-  NOR2_X1 g92574(.A1 (savings_local[3]), .A2 (n_56), .ZN (n_175));
-  NOR2_X1 g92576(.A1 (n_58), .A2 (amount[12]), .ZN (n_162));
-  NOR2_X1 g92578(.A1 (n_16), .A2 (amount[10]), .ZN (n_265));
-  NAND2_X1 g92597(.A1 (chequing_local[2]), .A2 (n_57), .ZN (n_180));
-  NAND2_X1 g92580(.A1 (chequing_local[5]), .A2 (n_61), .ZN (n_163));
-  NOR2_X1 g92582(.A1 (savings_local[2]), .A2 (n_57), .ZN (n_100));
-  NAND2_X1 g92587(.A1 (savings_local[3]), .A2 (n_56), .ZN (n_174));
-  NOR2_X1 g92592(.A1 (savings_local[4]), .A2 (n_51), .ZN (n_167));
-  NAND2_X1 g92596(.A1 (n_159), .A2 (amount[11]), .ZN (n_234));
-  NOR2_X1 g92599(.A1 (savings_local[1]), .A2 (n_55), .ZN (n_164));
-  NAND2_X1 g92583(.A1 (savings_local[2]), .A2 (n_57), .ZN (n_296));
-  NOR2_X1 g92512(.A1 (n_62), .A2 (n_67), .ZN (n_310));
-  NAND2_X1 g92619(.A1 (state[3]), .A2 (n_602), .ZN (n_53));
-  NAND2_X1 g92553(.A1 (savings_local[6]), .A2 (n_50), .ZN (n_122));
-  NAND2_X1 g92480(.A1 (open_atm_receive), .A2 (n_602), .ZN (n_52));
-  NAND2_X1 g92514(.A1 (n_204), .A2 (n_61), .ZN (n_185));
-  NAND2_X1 g92561(.A1 (chequing_local[4]), .A2 (n_51), .ZN (n_116));
-  NAND2_X1 g92621(.A1 (state[0]), .A2 (n_602), .ZN (n_392));
-  NOR2_X1 g92594(.A1 (savings_local[6]), .A2 (n_50), .ZN (n_128));
-  NAND2_X1 g92611(.A1 (n_49), .A2 (state[1]), .ZN (n_131));
-  NOR2_X1 g92605(.A1 (chequing_local[5]), .A2 (n_61), .ZN (n_107));
-  NAND2_X1 g92568(.A1 (chequing_local[3]), .A2 (n_56), .ZN (n_111));
-  INV_X1 g92492(.I (n_73), .ZN (n_47));
-  NAND2_X1 g92573(.A1 (chequing_local[6]), .A2 (n_50), .ZN (n_178));
-  NOR2_X1 g92593(.A1 (chequing_local[4]), .A2 (n_51), .ZN (n_129));
-  NOR2_X1 g92572(.A1 (chequing_local[6]), .A2 (n_50), .ZN (n_353));
-  INV_X1 g92508(.I (n_91), .ZN (n_46));
-  NAND2_X1 g92585(.A1 (chequing_local[7]), .A2 (n_33), .ZN (n_109));
-  NOR2_X1 g92615(.A1 (savings_local[8]), .A2 (n_66), .ZN (n_105));
-  NAND2_X1 g92589(.A1 (savings_local[1]), .A2 (n_55), .ZN (n_97));
-  NOR2_X1 g92616(.A1 (chequing_local[8]), .A2 (n_66), .ZN (n_201));
-  INV_X1 g92499(.I (n_44), .ZN (n_45));
-  NAND2_X1 g92591(.A1 (n_43), .A2 (amount[5]), .ZN (n_207));
-  INV_X1 g92540(.I (n_41), .ZN (n_42));
-  INV_X1 g92612(.I (n_519), .ZN (n_520));
-  NOR2_X1 g92524(.A1 (n_35), .A2 (n_49), .ZN (n_202));
-  INV_X1 g92525(.I (n_39), .ZN (n_40));
-  NOR2_X1 g92571(.A1 (savings_local[13]), .A2 (n_149), .ZN (n_108));
-  NAND2_X1 g92555(.A1 (n_38), .A2 (amount[11]), .ZN (n_206));
-  NAND2_X1 g92518(.A1 (n_37), .A2 (n_57), .ZN (n_140));
-  NOR2_X1 g92598(.A1 (chequing_local[3]), .A2 (n_56), .ZN (n_198));
-  NAND2_X1 g92559(.A1 (n_58), .A2 (amount[12]), .ZN (n_90));
-  NAND2_X1 g92595(.A1 (chequing_local[13]), .A2 (n_149), .ZN (n_192));
-  NAND2_X1 g92479(.A1 (open_atm_dispense), .A2 (n_602), .ZN (n_36));
-  NAND2_X1 g92609(.A1 (n_35), .A2 (state[2]), .ZN (n_172));
-  OR2_X1 g92478(.A1 (chequing_local[0]), .A2 (n_34), .Z (n_75));
-  NOR2_X1 g92603(.A1 (savings_local[7]), .A2 (n_33), .ZN (n_94));
-  INV_X1 g92542(.I (n_291), .ZN (n_32));
-  NOR2_X1 g92476(.A1 (savings_local[0]), .A2 (n_34), .ZN (n_268));
-  NAND2_X1 g92601(.A1 (savings_local[4]), .A2 (n_51), .ZN (n_69));
-  INV_X1 g92482(.I (n_30), .ZN (n_31));
-  INV_X1 g92485(.I (n_28), .ZN (n_29));
-  INV_X1 g92494(.I (n_26), .ZN (n_27));
-  INV_X1 g92516(.I (n_24), .ZN (n_25));
-  INV_X1 g92519(.I (n_22), .ZN (n_23));
-  INV_X1 g92527(.I (n_21), .ZN (n_135));
-  INV_X1 g92530(.I (n_19), .ZN (n_20));
-  NAND2_X1 g92537(.A1 (n_35), .A2 (n_49), .ZN (n_68));
-  INV_X1 g92538(.I (n_312), .ZN (n_18));
-  NOR2_X1 g92579(.A1 (chequing_local[7]), .A2 (n_33), .ZN (n_177));
-  INV_X1 g92545(.I (n_17), .ZN (n_138));
-  NAND2_X1 g92546(.A1 (chequing_local[4]), .A2 (amount[4]), .ZN (n_17));
-  NAND2_X1 g92547(.A1 (savings_local[3]), .A2 (amount[3]), .ZN (n_246));
-  NOR2_X1 g92541(.A1 (chequing_local[3]), .A2 (amount[3]), .ZN (n_41));
-  NOR2_X1 g92495(.A1 (savings_local[2]), .A2 (amount[2]), .ZN (n_26));
-  NOR2_X1 g92517(.A1 (savings_local[3]), .A2 (amount[3]), .ZN (n_24));
-  NOR2_X1 g92529(.A1 (savings_local[10]), .A2 (amount[10]), .ZN
-       (n_321));
-  NAND2_X1 g92488(.A1 (savings_local[4]), .A2 (amount[4]), .ZN (n_147));
-  NAND2_X1 g92520(.A1 (savings_local[9]), .A2 (amount[9]), .ZN (n_22));
-  NAND2_X1 g92487(.A1 (chequing_local[1]), .A2 (amount[1]), .ZN
-       (n_141));
-  NOR2_X1 g92507(.A1 (savings_local[4]), .A2 (amount[4]), .ZN (n_92));
-  NAND2_X1 g92484(.A1 (chequing_local[11]), .A2 (amount[11]), .ZN
-       (n_132));
-  NAND2_X1 g92533(.A1 (chequing_local[2]), .A2 (amount[2]), .ZN
-       (n_285));
-  NOR2_X1 g92486(.A1 (chequing_local[12]), .A2 (amount[12]), .ZN
-       (n_28));
-  NAND2_X1 g92489(.A1 (chequing_local[0]), .A2 (amount[0]), .ZN
-       (n_153));
-  NOR2_X1 g92506(.A1 (chequing_local[4]), .A2 (amount[4]), .ZN (n_137));
-  NAND2_X1 g92551(.A1 (amount[9]), .A2 (amount[8]), .ZN (n_81));
-  NAND2_X1 g92481(.A1 (savings_local[7]), .A2 (amount[7]), .ZN (n_133));
-  NAND2_X1 g92496(.A1 (savings_local[0]), .A2 (amount[0]), .ZN (n_86));
-  NOR2_X1 g92501(.A1 (chequing_local[7]), .A2 (amount[7]), .ZN (n_250));
-  NAND2_X1 g92505(.A1 (savings_local[8]), .A2 (amount[8]), .ZN (n_136));
-  NOR2_X1 g92528(.A1 (chequing_local[6]), .A2 (amount[6]), .ZN (n_21));
-  NOR2_X1 g92509(.A1 (savings_local[7]), .A2 (amount[7]), .ZN (n_91));
-  NAND2_X1 g92502(.A1 (savings_local[5]), .A2 (amount[5]), .ZN (n_14));
-  NOR2_X1 g92544(.A1 (state[1]), .A2 (bank_card_insert), .ZN (n_13));
-  NOR2_X1 g92500(.A1 (chequing_local[9]), .A2 (amount[9]), .ZN (n_44));
-  NOR2_X1 g92539(.A1 (savings_local[12]), .A2 (amount[12]), .ZN
-       (n_312));
-  NAND2_X1 g92515(.A1 (chequing_local[9]), .A2 (amount[9]), .ZN
-       (n_134));
-  NAND2_X1 g92523(.A1 (savings_local[2]), .A2 (amount[2]), .ZN (n_139));
-  NOR2_X1 g92535(.A1 (savings_local[6]), .A2 (amount[6]), .ZN (n_223));
-  NAND2_X1 g92532(.A1 (savings_local[12]), .A2 (amount[12]), .ZN
-       (n_194));
-  NOR2_X1 g92613(.A1 (state[0]), .A2 (rst), .ZN (n_519));
-  NOR2_X1 g92522(.A1 (pin[9]), .A2 (pin[8]), .ZN (n_12));
-  NOR2_X1 g92510(.A1 (savings_local[9]), .A2 (amount[9]), .ZN (n_74));
-  NAND2_X1 g92521(.A1 (savings_local[6]), .A2 (amount[6]), .ZN (n_145));
-  NOR2_X1 g92531(.A1 (chequing_local[1]), .A2 (amount[1]), .ZN (n_19));
-  NOR2_X1 g92493(.A1 (savings_local[8]), .A2 (amount[8]), .ZN (n_73));
-  NAND2_X1 g92491(.A1 (chequing_local[3]), .A2 (amount[3]), .ZN (n_11));
-  NAND2_X1 g92483(.A1 (chequing_local[6]), .A2 (amount[6]), .ZN (n_30));
-  NAND2_X1 g92526(.A1 (savings_local[11]), .A2 (amount[11]), .ZN
-       (n_39));
-  NOR2_X1 g92543(.A1 (chequing_local[11]), .A2 (amount[11]), .ZN
-       (n_291));
-  NOR2_X1 g92490(.A1 (savings_local[11]), .A2 (amount[11]), .ZN
-       (n_213));
-  NOR2_X1 g92497(.A1 (savings_local[5]), .A2 (amount[5]), .ZN (n_93));
-  INV_X1 g92649(.I (savings_local[5]), .ZN (n_43));
-  INV_X1 g92648(.I (chequing_local[8]), .ZN (n_15));
-  INV_X1 g92675(.I (amount[2]), .ZN (n_57));
-  INV_X1 g92667(.I (amount[11]), .ZN (n_10));
-  INV_X1 g92633(.I (state[2]), .ZN (n_49));
-  INV_X1 g92658(.I (pin[0]), .ZN (n_9));
-  INV_X1 g92634(.I (state[1]), .ZN (n_35));
-  INV_X1 g92638(.I (chequing_local[9]), .ZN (n_151));
-  INV_X1 g92672(.I (amount[8]), .ZN (n_66));
-  INV_X1 g92624(.I (savings_local[11]), .ZN (n_38));
-  INV_X1 g92665(.I (amount[9]), .ZN (n_82));
-  INV_X1 g92625(.I (chequing_local[11]), .ZN (n_159));
-  INV_X1 g92627(.I (savings_local[9]), .ZN (n_8));
-  INV_X1 g92628(.I (chequing_local[7]), .ZN (n_7));
-  INV_X1 g92661(.I (amount[4]), .ZN (n_51));
-  INV_X1 g92671(.I (deposit_withdrawal_selection), .ZN (n_6));
-  INV_X1 g92656(.I (rst), .ZN (n_602));
-  INV_X1 g92650(.I (savings_local[13]), .ZN (n_80));
-  INV_X1 g92643(.I (state[0]), .ZN (n_523));
-  INV_X1 g92663(.I (amount[12]), .ZN (n_5));
-  INV_X1 g92657(.I (amount[5]), .ZN (n_61));
-  INV_X1 g92659(.I (amount[1]), .ZN (n_55));
-  INV_X1 g92636(.I (chequing_local[5]), .ZN (n_204));
-  INV_X1 g92623(.I (chequing_local[13]), .ZN (n_77));
-  INV_X1 g92655(.I (chequing_local[10]), .ZN (n_16));
-  INV_X1 g92632(.I (savings_local[7]), .ZN (n_123));
-  INV_X1 g92639(.I (savings_local[2]), .ZN (n_4));
-  INV_X1 g92629(.I (chequing_local[12]), .ZN (n_58));
-  INV_X1 g92631(.I (chequing_local[6]), .ZN (n_3));
-  INV_X1 g92668(.I (amount[7]), .ZN (n_33));
-  INV_X1 g92664(.I (amount[10]), .ZN (n_67));
-  INV_X1 g92674(.I (amount[6]), .ZN (n_50));
-  INV_X1 g92642(.I (savings_local[1]), .ZN (n_87));
-  INV_X1 g92630(.I (savings_local[8]), .ZN (n_249));
-  INV_X1 g92626(.I (savings_local[12]), .ZN (n_60));
-  INV_X1 g92635(.I (state[3]), .ZN (n_231));
-  INV_X1 g92641(.I (savings_local[10]), .ZN (n_62));
-  INV_X1 g92669(.I (amount[3]), .ZN (n_56));
-  INV_X1 g92622(.I (chequing_local[2]), .ZN (n_37));
-  INV_X1 g92662(.I (amount[0]), .ZN (n_34));
-  INV_X1 g92670(.I (account_selection), .ZN (n_236));
-  INV_X1 g92673(.I (pin[10]), .ZN (n_2));
-  INV_X1 g92640(.I (savings_local[4]), .ZN (n_1));
-  INV_X1 g92660(.I (pin[4]), .ZN (n_0));
-  INV_X1 g92666(.I (amount[13]), .ZN (n_149));
-  INV_X1 g92637(.I (chequing_local[1]), .ZN (n_64));
-  NAND3_X1 g92710(.A1 (n_377), .A2 (n_376), .A3 (n_375), .ZN (n_641));
-  XOR2_X1 g2(.A1 (n_240), .A2 (n_75), .Z (n_642));
+  NOR2_X1 g12770(.A1 (savings_local[11]), .A2 (amount[11]), .ZN (n_51));
+  NOR2_X1 g12752(.A1 (savings_local[2]), .A2 (amount[2]), .ZN (n_61));
+  NOR2_X1 g12758(.A1 (chequing_local[11]), .A2 (amount[11]), .ZN
+       (n_57));
+  NAND2_X1 g12759(.A1 (savings_local[6]), .A2 (amount[6]), .ZN (n_114));
+  NOR2_X1 g12795(.A1 (chequing_local[9]), .A2 (amount[9]), .ZN (n_76));
+  NAND2_X1 g12768(.A1 (savings_local[0]), .A2 (amount[0]), .ZN (n_104));
+  NAND2_X1 g12775(.A1 (chequing_local[1]), .A2 (amount[1]), .ZN
+       (n_117));
+  NOR2_X1 g12786(.A1 (state[2]), .A2 (state[1]), .ZN (n_188));
+  OR2_X1 g12749(.A1 (chequing_local[8]), .A2 (amount[8]), .Z (n_17));
+  NAND2_X1 g12756(.A1 (chequing_local[6]), .A2 (amount[6]), .ZN
+       (n_116));
+  NOR2_X1 g12754(.A1 (chequing_local[1]), .A2 (amount[1]), .ZN (n_59));
+  NOR2_X1 g12849(.A1 (state[3]), .A2 (rst), .ZN (n_16));
+  NOR2_X1 g12798(.A1 (savings_local[9]), .A2 (amount[9]), .ZN (n_121));
+  NAND2_X1 g12744(.A1 (savings_local[11]), .A2 (amount[11]), .ZN
+       (n_126));
+  OR2_X1 g12776(.A1 (savings_local[5]), .A2 (amount[5]), .Z (n_15));
+  NOR2_X1 g12787(.A1 (chequing_local[4]), .A2 (amount[4]), .ZN (n_119));
+  NOR2_X1 g12760(.A1 (pin[9]), .A2 (pin[8]), .ZN (n_14));
+  NOR2_X1 g12767(.A1 (chequing_local[2]), .A2 (amount[2]), .ZN (n_53));
+  NAND2_X1 g12764(.A1 (savings_local[9]), .A2 (amount[9]), .ZN (n_55));
+  NOR2_X1 g12772(.A1 (savings_local[7]), .A2 (amount[7]), .ZN (n_49));
+  NAND2_X1 g12777(.A1 (chequing_local[0]), .A2 (amount[0]), .ZN
+       (n_129));
+  INV_X1 g12867(.I (savings_local[12]), .ZN (n_313));
+  INV_X1 g12885(.I (amount[4]), .ZN (n_202));
+  INV_X1 g12883(.I (amount[7]), .ZN (n_68));
+  INV_X1 g12886(.I (amount[11]), .ZN (n_301));
+  INV_X1 g12859(.I (state[2]), .ZN (n_65));
+  INV_X1 g12873(.I (chequing_local[11]), .ZN (n_13));
+  INV_X1 g12852(.I (savings_local[6]), .ZN (n_12));
+  INV_X1 g12892(.I (amount[9]), .ZN (n_278));
+  INV_X1 g12855(.I (savings_local[2]), .ZN (n_32));
+  INV_X1 g12857(.I (savings_local[8]), .ZN (n_11));
+  INV_X1 g12862(.I (chequing_local[6]), .ZN (n_10));
+  INV_X1 g12884(.I (amount[6]), .ZN (n_230));
+  INV_X1 g12879(.I (amount[2]), .ZN (n_180));
+  INV_X1 g12890(.I (amount[3]), .ZN (n_31));
+  INV_X1 g12868(.I (savings_local[11]), .ZN (n_41));
+  INV_X1 g12860(.I (chequing_local[2]), .ZN (n_9));
+  INV_X1 g12858(.I (chequing_local[1]), .ZN (n_8));
+  INV_X1 g12887(.I (deposit_withdrawal_selection), .ZN (n_7));
+  INV_X1 g12853(.I (state[0]), .ZN (n_332));
+  INV_X1 g12893(.I (amount[12]), .ZN (n_26));
+  INV_X1 g12891(.I (amount[10]), .ZN (n_69));
+  INV_X1 g12889(.I (amount[13]), .ZN (n_322));
+  INV_X1 g12874(.I (amount[8]), .ZN (n_39));
+  INV_X1 g12869(.I (savings_local[10]), .ZN (n_44));
+  INV_X1 g12854(.I (state[3]), .ZN (n_150));
+  INV_X1 g12856(.I (chequing_local[9]), .ZN (n_6));
+  INV_X1 g12882(.I (rst), .ZN (n_425));
+  INV_X1 g12863(.I (chequing_local[7]), .ZN (n_5));
+  INV_X1 g12877(.I (pin[0]), .ZN (n_4));
+  INV_X1 g12870(.I (chequing_local[4]), .ZN (n_3));
+  INV_X1 g12865(.I (savings_local[9]), .ZN (n_2));
+  INV_X1 g12888(.I (pin[10]), .ZN (n_1));
+  INV_X1 g12875(.I (pin[4]), .ZN (n_0));
+  INV_X1 g12876(.I (amount[1]), .ZN (n_46));
+  INV_X1 g12864(.I (savings_local[7]), .ZN (n_28));
+  INV_X1 g12881(.I (amount[5]), .ZN (n_72));
+  INV_X1 g12878(.I (account_selection), .ZN (n_324));
+  INV_X1 g12880(.I (amount[0]), .ZN (n_67));
+  INV_X1 g12866(.I (savings_local[4]), .ZN (n_204));
+  INV_X1 g12871(.I (state[1]), .ZN (n_40));
+  INV_X1 g12861(.I (savings_local[13]), .ZN (n_98));
+  INV_X1 g12872(.I (savings_local[1]), .ZN (n_105));
 endmodule
 

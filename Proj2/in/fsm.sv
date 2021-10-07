@@ -85,11 +85,11 @@ module fsm
                 end
                 // Checks pin.
                 pin_check: begin
-                    if (pin == pin_local) begin
-                        state <= select_deposit_withdrawal;
+                    if (pin != pin_local) begin
+                        state <= idle;
                     end
                     else begin
-                        state <=  idle;
+                        state <= select_deposit_withdrawal;
                     end
                 end
                 select_deposit_withdrawal: begin
@@ -105,15 +105,15 @@ module fsm
                 deposit_account_selection: begin
                     // Adds input amount to the savings or chequing account (aka deposit)
                     if (account_selection == CHEQUING)
-                        chequing_local = chequing_local + amount;
+                        chequing_local <= chequing_local + amount;
                     else begin
-                        savings_local = savings_local + amount;
+                        savings_local <= savings_local + amount;
                     end
                         state <= deposit_cash_or_check;
                 end
                 deposit_cash_or_check: begin
                     state <= open_atm_in;
-                    open_atm_receive = 1;
+                    open_atm_receive <= 1;
                 end
                 // Withdrawal states
                 withdrawal_account_selection: begin
@@ -128,13 +128,13 @@ module fsm
                 insufficient_funds_check: begin
                     if (account_selection == CHEQUING && amount <= chequing_local) begin
                         state <= open_atm_out;
-                        chequing_local = chequing_local - amount;
-                        open_atm_dispense = 1;
+                        chequing_local <= chequing_local - amount;
+                        open_atm_dispense <= 1;
                     end
                     else if (account_selection == SAVINGS && amount <= savings_local) begin
                         state <= open_atm_out;
-                        savings_local = savings_local - amount;
-                        open_atm_dispense = 1;
+                        savings_local <= savings_local - amount;
+                        open_atm_dispense <= 1;
                     end
                 end
                 // Wait for card to be withdrawn before entering idle again
@@ -142,8 +142,8 @@ module fsm
                     if (~bank_card_insert) begin
                         state <= idle;
                     end
-                    open_atm_dispense = 0;
-                    open_atm_receive = 0;
+                    open_atm_dispense <= 0;
+                    open_atm_receive <= 0;
                 end
                 default: state <= next_state;    
             endcase
