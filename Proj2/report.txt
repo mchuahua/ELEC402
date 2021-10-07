@@ -1,8 +1,0 @@
-Major tradeoff is that there are delays which contribute to some times where ready is asserted when it should not be for a few ps, during the high portion of the clk cycle.
-(insert image of ready being asserted weirdly)
-
-Also, it is harder to test as states are no longer enumerated within the synthesized output, and cannot be whitebox tested. The places where the tb whitebox tested needed to be commented out.
-
-Otherwise, the waveforms seem to match:
-(proj1 waveform all)
-(proj2 waveform all)
