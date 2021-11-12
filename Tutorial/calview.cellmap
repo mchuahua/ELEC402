@@ -1,0 +1,34 @@
+ 
+(nmos
+  (NCSU_TechLib_FreePDK15 nfet symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+)
+(pmos
+  (NCSU_TechLib_FreePDK15 pfet symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+)
+((p cap c)  
+	(analogLib cap symbol)  
+	(    
+	        (PLUS)
+        	(MINUS)
+        )
+)
+
+((p res r)
+        (analogLib res symbol)
+        (
+                (PLUS)
+                (MINUS)
+        )
+)
