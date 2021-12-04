@@ -1,0 +1,32 @@
+#-----------------------------------------------------------------------------
+# Taiwan Semiconductor Manufacturing Company, Ltd.
+#-----------------------------------------------------------------------------
+#
+# CADENCE LEF 5.5 Stream layer mapping table for TSMC DSD 
+#
+#-----------------------------------------------------------------------------
+# Layer/ Object Name Layer/ Object Type Layer Number Datatype
+# <t_ layerObjectName> <t_ objectType> <n_ layerNum> <n_ datatype>
+PO              NET                             17      0
+CO              VIA                             30      0
+Metal1		NET, SPNET, VIA			7	0
+Metal2		NET, SPNET, VIA			9	0
+Metal3		NET, SPNET, VIA			11	0
+Via1		VIA				8	0
+Via2		VIA				10	0
+Metal1		PIN				7	0
+Metal2		PIN				9	0
+Metal3		PIN				11	0
+Metal1		FILL				7	1
+Metal2		FILL				9	1
+Metal3		FILL				11	1
+Via1		VIAFILL				8	1
+Via2		VIAFILL				10	1
+DIEAREA 	ALL 				108	0
+COMP		ALL				127	0
+NAME		COMP				127	0
+NAME		M1/PIN				131	0
+NAME		M2/PIN				132	0
+NAME		M3/PIN				133	0
+AP		NET, SPNET, VIA			74	0
+RV		VIA				85	0
